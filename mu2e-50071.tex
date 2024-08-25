@@ -1,0 +1,191 @@
+% -*- mode:flyspell; mode:latex -*-
+\documentclass[12pt]{article}
+\addtolength{\oddsidemargin} {-0.885in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\evensidemargin}{-0.8in}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+%% \usepackage{siunitx}
+
+%% \usepackage{gensymb}
+
+
+\usepackage{tikz}
+\usepackage{[caption}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+% \usepackage[absolute,overlay]{textpos}
+% \usepackage{onimage}
+
+\usepackage{tabularx}
+\usepackage{times}
+\usepackage{graphics}
+
+% \usepackage{subfigure}
+% \usepackage{scalefnt}
+%
+% \renewcommand\thesubfigure{\arabic{subfigure}}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{hhline}
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[all]{hypcap}
+
+\usepackage[normalem]{ulem}  % for striking out
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhead[C]{}
+% \fancyhead[L] {\it{Mu2e-doc-29670-v1.0} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% use natbib - biblatex not available on Mu2e interactive nodes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[square,sort,comma,numbers]{natbib}
+
+% location of the .bib files: env var BIBINPUTS (~/library/bibliography)
+
+% \usepackage[backend=biber, style=numeric-comp, sorting=ynt] {biblatex}
+% \addbibresource{clfv.bib}
+
+% \addbibresource{stntuple.bib}
+% \addbibresource{mu2e_web.bib}
+% \addbibresource{radiative_pion_capture.bib}
+
+\graphicspath{{figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for portability, make sure all commands are included locally,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ForestGreen}{RGB}{30,139,30}
+%\include{commands}
+\newcommand {\blue}      {\color{blue}}
+\newcommand {\green}     {\color{ForestGreen}}
+\newcommand {\red}       {\color{red}}
+\newcommand {\purple}    {\color{purple}}
+\newcommand {\violet}    {\color{violet}}
+
+\newcommand {\kmax}      {\mbox{$k_{\rm max}$}}
+\newcommand {\piplusenu} {\mbox{$\pi^+ \to e^+ \nu$}}
+
+\newcommand {\mumemconv}[1][A] {\mbox{$\mu^- \textrm{#1} \rightarrow e^- \textrm{#1}$}}
+% Define a relay to have 2 default arguments instead of limit of 1
+\newcommand {\mumepconv}[1][A] {%
+  \def\ArgI{{#1}}%store the first argument
+  \mumepconvRelay
+}
+\newcommand \mumepconvRelay[1][A]  {\mbox{$\mu^- \textrm{\ArgI} \rightarrow e^+ \textrm{#1}$}}
+\newcommand {\MuToEm}     {\mbox{$\mu^- \ra e^-$}}
+\newcommand {\MuToEp}     {\mbox{$\mu^- \ra e^+$}}
+\newcommand {\MuPToEp}    {\mbox{$\mu^+ \ra e^+$}}
+\newcommand {\ra}        {\rightarrow}
+\newcommand {\Rmue}       {\mbox{$R_{\mu e}$}}
+\newcommand {\tandip}    {\mbox{$\tan \lambda$}}
+
+\newcommand {\Pb}[1]     {\mbox{$\rm ^{#1}Pb$}}                 % isotopes of lead
+\newcommand {\Au}[1]     {\mbox{$\rm ^{#1}Au$}}                 % isotopes of gold
+\newcommand {\Ir}[1]     {\mbox{$\rm ^{#1}Ir$}}                 % isotopes of iridium
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% editing commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand {\del}[1]    {{\blue \sout{#1}}}
+\newcommand {\dlt}[1]    {{\violet \sout{#1}}} %alternate delete color
+\newcommand {\add}[1]    {{\red #1}}
+\newcommand {\alt}[1]    {{\green #1}} %alternate comment color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{titlepage}
+  \begin{flushright}
+    \bf {MU2E/PHYSICS/50071} \\
+    version 1.01
+    \today
+ \end{flushright}
+
+  \vspace{1cm}
+
+  \begin{center}
+    {\Large \bf On a possibility of the Mu2e momentum scale calibration at full field
+      \vspace{0.3in}
+      1. Initial analysis
+    }
+
+    \vspace{1cm}
+    K.Ciampa(BU), P.Murat(FNAL)
+
+    % \footnote{\texttt{Fermilab; e-mail: murat@fnal.gov}}
+    \vspace{0.3cm}
+
+    \vspace{0.8cm}
+  \end{center}
+
+  \begin{abstract}
+    \vspace{0.2in}
+    Radiative pion capture (RPC) on hydrogen  provides a unique opportunity to calibrate
+    the Mu2e momentum scale at full field.
+
+    Kinematic edge of the momentum distribution of 129.4 MeV RPC photons
+    reconstructed in $\gamma \to e^+e^-$ channel could be used as a calibration line.
+
+    We investigate whether the rate of events of interest is sufficient for the calibration.
+  \end{abstract}
+
+\end{titlepage}
+% \frontmatter
+% \chapter*{Abstract}
+%
+% \addcontentsline{toc}{chapter}{Abstract}
+%
+% \mainmatter
+%
+{\tableofcontents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter{Calibration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \input{input_data}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section {Revision History and TODO items}
+
+\begin{itemize}
+\item
+  v1.01: inital version
+\end{itemize}
+
+TODO items:
+
+\begin{itemize}
+\item
+  placeholder
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section {Introduction}
+
+\include{rpc_on_hydrogen}
+% \include{calibration_time}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section {Summary}
+
+to be written
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{clfv,mu2e_internal_notes,mu2e_piplusenu_notes}
+
+% \include{appendix_a}
+% \include{appendix_b}
+
+\end{document}

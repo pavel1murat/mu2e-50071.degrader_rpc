@@ -1,0 +1,4 @@
+#+startup:fold
+
+* note: file:tmp/mu2e-48630.pdf
+* file:/projects/mu2e/drawings/momentum_scale_calibration.odp
