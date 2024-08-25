@@ -1,4 +1,28 @@
 #+startup:fold
+* ------------------------------------------------------------------------------
+* directory: file:./
+* ------------------------------------------------------------------------------
+* note: file:tmp/mu2e-50071.pdf
+* setup                                                                      
+#+begin_src
+git clone https://github.com/pavel1murat/mu2e-50071.degrader_rpc
+bibdir=<bib_dir> # choose the name
+git clone https://github.com/pavel1murat/mu2e_bibliography  bibdir
+export BIBINPUTS=$PWD/bibdir
+cd mu2e-50071.degrader_rpc
+make note
+okular tpm/mu2e-50071.pdf &
+#+end_src
+* absolute normalization:
+- use histogram file pipenu.bpim0b0r000.murat_spmc_ana.0000.hist
 
-* note: file:tmp/mu2e-48630.pdf
-* file:/projects/mu2e/drawings/momentum_scale_calibration.odp
+|-----------------------+-------+----------+----------------|
+| bpim0b0:              | 2.5e8 | fraction | generated POT  |
+| total stops in CH2:   |  1288 |   5.1e-6 | sum of weights |
+| stops in CH2 T>150 ns | 667.9 |   2.7e-6 | sum of weights |
+| stops in CH2:T>200 ns | 68.48 |   2.6e-7 | sum of weights |
+|-----------------------+-------+----------+----------------|
+
+so reducing intensity by an additional factor and starting from an earlier time
+could be beneficial
+* ------------------------------------------------------------------------------
