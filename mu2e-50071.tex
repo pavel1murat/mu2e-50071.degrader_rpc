@@ -62,7 +62,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % for portability, make sure all commands are included locally,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{ForestGreen}{RGB}{30,139,30}
+\definecolor{ForestGreen}{RGB}{20,109,20}
 %\include{commands}
 \newcommand {\blue}      {\color{blue}}
 \newcommand {\green}     {\color{ForestGreen}}
@@ -93,10 +93,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % editing commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand {\del}[1]    {{\blue \sout{#1}}}
+\newcommand {\del}[1]    {{\blue   \sout{#1}}}
 \newcommand {\dlt}[1]    {{\violet \sout{#1}}} %alternate delete color
 \newcommand {\add}[1]    {{\red #1}}
 \newcommand {\alt}[1]    {{\green #1}} %alternate comment color
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for editors
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand {\pasha}[1]    {{\green  #1}}
+\newcommand {\kate}[1]     {{\blue   #1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -133,7 +138,19 @@
     reconstructed in $\gamma \to e^+e^-$ channel could be used as a calibration line.
 
     We investigate whether the rate of events of interest is sufficient for the calibration.
-  \end{abstract}
+
+    Color legend:
+    
+    \begin{itemize}
+    \item
+      \kate{color for Kate}
+    \item 
+      \pasha{color for Pasha}
+    \item
+      {\red color for TODO items}
+    \end{itemize}
+
+      \end{abstract}
 
 \end{titlepage}
 % \frontmatter
@@ -172,7 +189,44 @@ TODO items:
 \section {Introduction}
 
 \include{rpc_on_hydrogen}
-% \include{calibration_time}
+\include{geometry_optimization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Contribution of the $\rm CH_2$ disk }
+
+\begin{itemize}
+\item
+  compare 1mm to 0.1 mm to 0.2mm
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Contribution of the Pb foil}
+
+\begin{itemize}
+\item
+  compare 1mm to 0.1 mm to 0.2mm
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Electric current}
+When inserted into the beam, the degrader stops the beam particles, mostly electrons.
+Therefore, to avoid the charge accumulation, the degrader needs to be grounded.
+An estimate of the electric current can be obtained as follows:
+\begin{itemize}
+\item
+  assume that degrader stops all beam flash particles
+\item
+  from SU2020: the rate of the beam flash particles, assume all are electrons, is $\sim ~ 10^2$ of that of muons
+\item
+  muons : $1.6 \cdot 10^{-3} \times 3.9 \cdot 10^7$ , say, $7 \cdot 10^4$, which gives $\sim ~ 7 \cdot 10^7$ electrons per 1.7 ms
+\item
+  the corresponding electric current is $I ~=~ 7 \cdot 10^{-7} \times 1.6 \cdot 10^{-19} / {1.7 \cdot 10^{-6}} \sim 7 \cdot 10^{-6}$ A,
+  or $\sim$ 10 microamperes
+\end{itemize}
+
+
+
+\include{calibration_time}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section {Summary}
@@ -183,9 +237,9 @@ to be written
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \bibliographystyle{unsrtnat}
-\bibliography{clfv,mu2e_internal_notes,mu2e_piplusenu_notes}
+\bibliography{clfv,mu2e_internal_notes,mu2e_piplusenu_notes,radiative_pion_capture}
 
 % \include{appendix_a}
-% \include{appendix_b}
+\include{appendix_b}
 
 \end{document}

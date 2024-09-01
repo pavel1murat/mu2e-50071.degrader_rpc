@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Estimate of the time needed for momentum calibration}
+Calibration with RPC on hydrogen allows to determine the momentum scale of the experiment.
+
+In this section we assume that the experimental background doesn't affect
+the determination accuracy of the momentum edge of RPC photon peak
+and estimate the time needed for the calibration.
+
+\begin{itemize}
+\item 
+  required accuracy of the momentum scale calibration $@$100 MeV/c: $\sigma_P/P$ < 100 keV/c
+\item
+  {\red how many events do we need ?}
+\item
+  For a yield of $10^{-13}$ events/POT, collecting 1000 events requires $10^{16}$ protons on target.
+  In one-batch mode, an average expected pulse intensity is $1.6 \times 10^7$, and
+  an average  pulse rate of 1$.6 \times 10^5$ pulses/sec correspond to the rate of $2.5 \times 10^{12}$ protons/sec.
+\item
+  Assuming running at 10\% of nominal beam intensity and the data collection efficiency of 50\%,
+  collecting 1000 reconstructable \piplusenu\ events would require
+  $10^{16}/(1.25 \times 10^{11}) \sim 10^5$ seconds, or about one day of running.
+\item
+  running at 10\% of the nominal beam intensity in one-batch mode and with the digitization starting
+  at 200 ns corresponds to the total number of background hits per microbunch of about 200,
+  so the pileup at T>300 ns should not be a problem.
+\end{itemize}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
