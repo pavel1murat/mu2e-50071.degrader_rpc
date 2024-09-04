@@ -1,24 +1,39 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Optimization of the degrader geometry}
+\section{Degrader geometry}
 
+The pion degrader was introduced to suppress the background to \piplusenu\
+from muon decays in flight and was thought of as a disk made of non-magnetic material
+inserted into the beam for the calibration runs and moved out of the beam
+during the data taking.
+
+Making the degrader of CH2 allows to use the process of radiative capture of
+stopped $\pi^-$'s on hydrogen, $\pi^-p \to n\gamma$, for calibrating the Mu2e momentum scale
+at full field. RPC on H2 yields 129.4 MeV photons. For that, a converter ring of a larger radius needs to be added.
+
+For now, implement a converter ring $R_{out}$ = 250mm, with $R_{in}$ defined
+by the converter thickness.
+
+\piplusenu\ studies: the degrader disk thickness of 4 mm Ti is close to optimal.
+
+4mm of Ti is equivalent to about $1.8 g/cm^2$.
 \begin{itemize}
-\item 
-  For \piplusenu\ select tracks with small impact parameters.
-\item 
-  Expect muon decays in flight with muons far from the beam axis to be suppressed
-  by the impact parameter selection.
 \item
-  therefore, can reduce the radius of the lead part down to what ? - try 
+  9mm CH2 + 1.0mm Pb: : 2.0 $g/cm^2$   .. $\pi*15^2*(0.9*0.95 + 0.08*11.34): \simeq 2 g/cm^2$
+\item
+   9mm CH2 + 0.8mm Pb: : $1.76 g/cm^2$
+ \item
+   reduce the outer radius of the degrader disk - don't need 15 cm
+ \item
+   CH2 disk R=14 cm, weight        : $0.9*0.95*\pi*14^2$ = 526 gr \\
+   Pb  foil R=10cm thickness 0.8mm : 0.08*11.34*314    = 285 gr \\
+   total                           : 811 gr
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Converter position in Z}
+To make sure that $e^+$ and $e^-$ do not cross the converter foil multiple times,
+move the converter forward by 1cm.
 
-\begin{itemize}
-\item
-  compare converter positioned at the same Z as the polyethylene disk
-  to converter moved forward by 1cm 
-\end{itemize}
+In the real degrader, the converter foil will be supported
+by a carbon foam disk, to be designed.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Converter thickness - connection to \piplusenu\  calibration}

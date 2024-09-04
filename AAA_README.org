@@ -1,4 +1,5 @@
 #+startup:fold
+#+BABEL: :session *python* :cache yes :results output graphics :exports both :tangle yes 
 * ------------------------------------------------------------------------------
 * directory: file:./
 * figures  : file:figures/
@@ -60,7 +61,7 @@ could be beneficial
 - the outcome: (1-fH2)*0.75  
 * energy loss correlation with the photon emission angle                     
   file:figures/png/rpc03b0s44r0000_drpc_2_smvd13_vs_sinth.png
-* Jim M. assumptions     
+* Jim Miller: assumptions                                                         
 
 - There are about 2000 times (?) fewer stopped pions compared to muons in the target.
   > the total fraction is about 1/300, but the number itself doesn't mean much:
@@ -94,4 +95,17 @@ could be beneficial
 - Maybe 1/3 will go downstream with a high enough helical dip angle, 100/s
 
 - We have to turn the beam down by x10 so the detectors can handle the flash, 10/s
+* RPC on hydrogen: the photon energy                                         
+ - pi- p -- > n gamma, stopped pi^-
+#             .. #+begin_src python :var fn = "a.png" :session :results none 
+# turns out that :session prevents the graphics window from opening
+# replace 'none' with 'file' for writing output into a file
+#+begin_src python :session :var mp=938.272 :var mn=939.565 :var mpi=139.57
+  pgamma = ((mp+mpi)*(mp+mpi)-mn*mn)/2/(mp+mpi);
+  output = "pgamma = %10.3f"%pgamma
+  (output)
+#+end_src
+
+#+RESULTS:
+: pgamma =    129.407
 * ------------------------------------------------------------------------------
