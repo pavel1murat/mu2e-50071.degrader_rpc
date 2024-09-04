@@ -15,6 +15,8 @@ cd mu2e-50071.degrader_rpc
 make note
 okular tpm/mu2e-50071.pdf &
 #+end_src
+* figures in the note                                                         
+- all figures made by scripts, see : file:scripts/plot.C 
 * digitized figures from Bistirlich et al (1971) : file:csv
 * degrader geometry and weight                                               
  4mm TI: 0.4*4.5 = 1.8g/cm^2
@@ -61,7 +63,7 @@ could be beneficial
 - the outcome: (1-fH2)*0.75  
 * energy loss correlation with the photon emission angle                     
   file:figures/png/rpc03b0s44r0000_drpc_2_smvd13_vs_sinth.png
-* Jim Miller: assumptions                                                         
+* Jim Miller: assumptions                                                    
 
 - There are about 2000 times (?) fewer stopped pions compared to muons in the target.
   > the total fraction is about 1/300, but the number itself doesn't mean much:
