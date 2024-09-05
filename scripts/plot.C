@@ -28,6 +28,11 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "plot_figure_0010.C"           // sum mom at VD10
 #include "plot_figure_0013.C"           // sum mom at VD13
+#include "plot_figure_0021.C"           // stopped pion time, weighted
+#include "plot_figure_0022.C"           // stopped pion momentum, weighted
+#include "plot_figure_0031.C"           // stopped pions y:x CH2
+#include "plot_figure_0034.C"           // stopped pions y:x CH2
+#include "plot_figure_0035.C"           // stopped pions y:x CH2
 //-----------------------------------------------------------------------------
 // real [machine-dependent] values of Mu2eNotesDir and Mu2eHistDir 
 // should be defined in .rootrc
@@ -66,6 +71,11 @@ plot_data_t* plot(int Figure, int Print = 0) {
 //-----------------------------------------------------------------------------
   if      (Figure ==   10) pdata = plot_figure_0010(Figure,Print);  // P1+P2 at VD10
   if      (Figure ==   13) pdata = plot_figure_0013(Figure,Print);  // P1+P2 at VD12
+  if      (Figure ==   21) pdata = plot_figure_0021(Figure,Print);  // stopped pion time
+  if      (Figure ==   22) pdata = plot_figure_0022(Figure,Print);  // stopped pion momntum
+  if      (Figure ==   31) pdata = plot_figure_0031(Figure,Print);  // ST stopped pion Y:X
+  if      (Figure ==   34) pdata = plot_figure_0034(Figure,Print);  // CH2 stopped pion Y:X
+  if      (Figure ==   35) pdata = plot_figure_0035(Figure,Print);  // Pb stopped pion Y:X
 
   return pdata;
 }

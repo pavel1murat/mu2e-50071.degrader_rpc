@@ -10,11 +10,28 @@ Making the degrader of CH2 allows to use the process of radiative capture of
 stopped $\pi^-$'s on hydrogen, $\pi^-p \to n\gamma$, for calibrating the Mu2e momentum scale
 at full field. RPC on H2 yields 129.4 MeV photons. For that, a converter ring of a larger radius needs to be added.
 
-For now, implement a converter ring $R_{out}$ = 250mm, with $R_{in}$ defined
-by the converter thickness.
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,-10.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      \makebox[\textwidth][c] {
+        \includegraphics[width=0.95\textwidth]{pdf/degrader_geometry_001}
+      }
+    };
+    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
+    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
+  \end{tikzpicture}
+  \caption{
+    \label{figure:degrader_geometry_001}
+    Schematic view of the simulated degrader geometry
+  }
+\end{figure}
 
-\piplusenu\ studies: the degrader disk thickness of 4 mm Ti is close to optimal.
+The considered degrader geometry is schematically shown in Figure~\ref{figure:degrader_geometry_001}.
 
+A gold converter ring had the $R_{out}$ = 250mm, with teh $R_{in}$ defined by the converter thickness.
+
+From \piplusenu\ studies: the degrader disk thickness of 4 mm Ti is close to optimal.
 4mm of Ti is equivalent to about $1.8 g/cm^2$.
 \begin{itemize}
 \item
@@ -32,55 +49,81 @@ by the converter thickness.
 To make sure that $e^+$ and $e^-$ do not cross the converter foil multiple times,
 move the converter forward by 1cm.
 
-In the real degrader, the converter foil will be supported
-by a carbon foam disk, to be designed.
+In the real degrader, the converter foil will be supported by a carbon foam disk,
+to be designed.
+
+Another option which, if possible, could be even more attractive, is to mount
+the converter placed on hte carbon foam ring, to the OPA.
+That would allow to increase the acceptance by increasing the width
+of the converter ring.
+
+Permanent placement of the thin ring at R=25-30 cm does not impact the signal acceptance
+in any noticeable way.{\red to be demonstrated, and the number to be given}.
+
+The acceptance is directly proportional to the width of the converter ring,
+so making it 3cm wide instead of 1 cm wide would increase the acceptance
+by a factor of x3.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Converter thickness - connection to \piplusenu\  calibration}
+\subsection{pion stops}
+
+Momentum and time:
 
 \begin{figure}[H]
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] at (0,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
-      \makebox[\textwidth][c] {
-        \includegraphics[width=0.9\textwidth]{png/figure_00010}
-      }
+      % \makebox[\textwidth][c] {
+        \includegraphics[width=0.5\textwidth]{png/figure_00021}
+      % }
     };
-    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
-    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
-  \end{tikzpicture}
-  \caption{
-    \label{figure:sum_mom_vd10}
-    P1+P2 at VD10
-  }
-\end{figure}
-
-\begin{figure}[H]
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] at (0,0.) {
+    \node[anchor=south west,inner sep=0] at (10,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
-      \makebox[\textwidth][c] {
-        \includegraphics[width=0.9\textwidth]{png/figure_00013}
-      }
+      % \makebox[\textwidth][c] {
+        \includegraphics[width=0.5\textwidth]{png/figure_00022}
+      % }
     };
     % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
     \label{figure:sum_mom_vd13}
-    P1+P2 at VD13
+    Stopped pions: distributions of momentum and time
   }
 \end{figure}
 
-The converter thickness is chosen based on the distributions shown in Figure~\ref{figure:sum_mom_vd13}.
-Plotted: $P_{tot} = P_1 + P_2$ at VD13, virtual detector in front of the tracker fro events with
-two particles, an electron and a positron with P > 30 MeV/c and producing 20 or more straw hits in the tracker each.
-Such particles provide a good proxy to the reconstructable tracks.
 
-The event yield increases with the converter thickness. However of interest for the scale calibration only
-are the events close to the kinematic edge.
-The highest yield of events with P > 128 Mev/c corresponds to the 100 um gold foil, and that determines
-the choice of 100 um thick converter.
+Y vs X :
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      %\makebox[\textwidth][c] {
+        \includegraphics[width=0.5\textwidth]{png/figure_00034}
+      %}
+    };
+    \node[anchor=south west,inner sep=0] at (10.,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      %\makebox[\textwidth][c] {
+        \includegraphics[width=0.5\textwidth]{png/figure_00035}
+      %}
+    };
+    \node[anchor=south west,inner sep=0] at (0,-10.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      % \makebox[\textwidth][c] {
+        \includegraphics[width=0.5\textwidth]{png/figure_00031}
+      % }
+    };
+    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
+    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
+  \end{tikzpicture}
+  \caption{
+    \label{figure:y_vs_x_st}
+    Y(stop):X(stop) for pions stopped in the CH2 and Pb
+  }
+\end{figure}
+
 
 %%% Local Variables:
 %%% mode: latex

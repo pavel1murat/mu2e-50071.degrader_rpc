@@ -31,26 +31,33 @@ okular tpm/mu2e-50071.pdf &
  
 * absolute rates:                                                            
 - use histogram files : pipenu.bpim0b0s24r0000.murat_spmc_ana.0000.hist
-| ! |                       |                | wstop_ch2 |  fr_ch2 | wstop_pb |   fr_pb |
-| $ | npot=2.5e8            |                |           |         |          |         |
-|---+-----------------------+----------------+-----------+---------+----------+---------|
-| # | total stops           |                |      1161 | 4.6e-06 |    562.6 | 2.3e-06 |
-| # | stops in CH2 T>150 ns | simp_215/etime |     574.2 | 2.3e-06 |     2.69 | 1.1e-08 |
-| # | stops in CH2:T>200 ns | simp_215/etime |     60.48 | 2.4e-07 |   0.0176 | 7.0e-11 |
-|---+-----------------------+----------------+-----------+---------+----------+---------|
-#+TBLFM: $5=$wstop_ch2/$npot;%8.1e::$7=$wstop_pb/$npot;%8.1e::
+| ! |             | hist           | sw_ch2 |  fr_ch2 |  sw_pb |   fr_pb | sw_tgt |  fr_tgt |
+| $ | npot=2.5e8  |                |        |         |        |         |        |         |
+|---+-------------+----------------+--------+---------+--------+---------+--------+---------|
+| # | total stops |                |   1260 | 5.0e-06 |  792.3 | 3.2e-06 |  243.2 | 9.7e-07 |
+| # | T>150 ns    | simp_215/etime |  657.7 | 2.6e-06 |  4.766 | 1.9e-08 |  28.09 | 1.1e-07 |
+| # | T>200 ns    | simp_215/etime |  67.42 | 2.7e-07 | 0.0141 | 5.6e-11 | 0.0914 | 3.7e-10 |
+|---+-------------+----------------+--------+---------+--------+---------+--------+---------|
+#+TBLFM: $5=$sw_ch2/$npot;%8.1e::$7=$sw_pb/$npot;%8.1e::$9=$sw_tgt/$npot;%8.1e::
 
 with the new degrader geometry: R=250 mm  100 um thick :
 
 139 events in the histogram per 10^5 events generated with 0 < cos(theta) < 0.1.
 This corresponds to the acceptance of 139/10^5*0.1/2 = 1.4e-3*5e-2 = 7e-5
 
-2.4e-7(prob_to_stop)*7e-5(prob_of_conversion_event)*1.e-2(H2_fraction)*0.4 = 7.4-14
+estimate of the probability to reconstruct an event:
+
+          7e-5(prob_of_a_photon_conversion_event)*1.e-2(H2_fraction)*0.4(BR pi-p --> n gamma) = 2.8.e-7
+
+per POT: 2.7-7(prob_to_stop)*2.8e-7 = 7.5e-14;
 
 - 1-batch mode: 1.6e7 POT/pulse x 1.6e5 pulses/sec = 2.5e12 protons/sec
 - assume 10% intensity and 50% data taking efficiency: f = 0.05 = 5.e-2
 - under these assumptions: ~ 1.2e11 protons/sec
-- 1 day: 86400 sec ==> 1.1e16 POT ---> 800 events
+- 1 day: 86400 sec ==> 1.1e16 POT times 7.5e-14 = 800 events
+
+- 2-batch mode, same assumptions: 
+  3.9e7 POT/pulse x 1.6e5 pulses/sec = 6.2e12 protons/sec x 5.e-2 (eff) x 86400 = 2.7e16 POT / day
 
 - under the same assumptions, for 2-batch mode: x2.5 .... 2,000 events
 
@@ -110,4 +117,5 @@ could be beneficial
 
 #+RESULTS:
 : pgamma =    129.407
+
 * ------------------------------------------------------------------------------
