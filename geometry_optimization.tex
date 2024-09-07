@@ -124,6 +124,35 @@ Y vs X :
   }
 \end{figure}
 
+The distributions in Figure \ref{figure:y_vs_x_st} are a consequence of the momentum-dependent vertical
+drift of transported particles in the TS, where for particles with momentum above 50 MeV/c the vertical offset
+due to the drift in TSd overcompensates the offset due to the drift in TSu.
+The correlation between the vertical position of stopped particles in teh degrader and the particle momentum
+on exit from the TS is shown in Figure ~\ref{figure:y_vs_p_deg}.
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      %\makebox[\textwidth][c] {
+        \includegraphics[width=0.5\textwidth]{png/figure_00036}
+      %}
+    };
+    \node[anchor=south west,inner sep=0] at (10.,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      % \makebox[\textwidth][c] {
+      \includegraphics[width=0.5\textwidth]{png/figure_00037}
+      % }
+    };
+    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
+    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
+  \end{tikzpicture}
+  \caption{
+    \label{figure:y_vs_p_deg}
+    Y(stop):P\@(DS entrance) for negative pions stopped in the $CH_2$ and Pb parts of the simulated degrader
+  }
+\end{figure}
+
 
 %%% Local Variables:
 %%% mode: latex

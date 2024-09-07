@@ -118,4 +118,7 @@ could be beneficial
 #+RESULTS:
 : pgamma =    129.407
 
+* [0/2] TODO                                                                 
+** TODO run reconstruction ?
+** TODO 'hang' converter on the OPA ?
 * ------------------------------------------------------------------------------
