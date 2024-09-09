@@ -118,7 +118,9 @@ could be beneficial
 #+RESULTS:
 : pgamma =    129.407
 
-* [0/2] TODO                                                                 
+* [0/4] TODO                                                                 
+** TODO add sum_momentum plot with the bin of 0.1 MeV/c - need larger stat
+** TODO fix colors and legends on the time/momentum plots Fig 4
 ** TODO run reconstruction ?
 ** TODO 'hang' converter on the OPA ?
 * ------------------------------------------------------------------------------
