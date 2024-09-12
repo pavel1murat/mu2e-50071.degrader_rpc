@@ -9,8 +9,8 @@ plot_data_t* plot_figure_0013(int Figure, int Print) {
 
   const char* book       = "pipenu";
   const char* ana_job    = "murat_drpc_ana.0000";
-  const char* ana_module = "DegraderRpcAna";
-  const char* hist_name  = "drpc_2/smvd13";
+  const char* ana_module = "murat_DrpcAna";
+  const char* hist_name  = "drpc_2/smvd13_0";
 
   plot_data_t* pdata     = new plot_data_t(3);   // 3 histograms overlaid
   plot_data_t& p         = *pdata;
@@ -43,12 +43,12 @@ plot_data_t* plot_figure_0013(int Figure, int Print) {
   p.hd[2].fLabel       = "0.1 mm Au";
   p.hd[2].fLineColor   = kRed+1;
   p.hd[2].fFillColor   = kRed+1;
-  p.hd[2].fFillStyle   = 3001;
+  p.hd[2].fFillStyle   = 3004;
   // p.hd[2].fMarkerColor = kGreen;
   // p.hd[2].fMarkerStyle = 22;
   // p.hd[2].fMarkerSize  = 0.8;
   p.hd[2].fDrawOpt     = "h";
-  //  p.hd[2].fLumiSF      = gPipenu->GetChannel("bpip3b0s51r0100")->NormSF();
+  p.hd[2].fLumiSF      = 1./100; // gPipenu->GetChannel("bpip3b0s51r0100")->NormSF();
     
   p.fXMin              = 0.;
   p.fXMax              = 200;

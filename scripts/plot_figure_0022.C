@@ -46,7 +46,7 @@ plot_data_t* plot_figure_0022(int Figure, int Print) {
   p.hd[2].fLabel       = "ST";
   p.hd[2].fLineColor   = kRed+1;
   p.hd[2].fFillColor   = kRed+1;
-  p.hd[2].fFillStyle   = 3001;
+  p.hd[2].fFillStyle   = 3004;
   // p.hd[2].fMarkerColor = kGreen;
   // p.hd[2].fMarkerStyle = 22;
   // p.hd[2].fMarkerSize  = 0.8;

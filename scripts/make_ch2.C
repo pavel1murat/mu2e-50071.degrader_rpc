@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-void make_ch2(TH1F*& Hist) {
+void make_ch2(TH1F*& Hist, int PrintLevel = 0) {
 
   float data[] = {
     50.6089,3.95710e-05,
@@ -113,4 +113,10 @@ void make_ch2(TH1F*& Hist) {
   // fCE->SetMarkerSize (1.5);
   Hist->SetMarkerColor(kBlue+2);
   Hist->SetLineColor  (kBlue+2);
+
+  if (PrintLevel > 0) {
+    for (int i=1; i<=nbx; i++) {
+      printf("%10.3f %12.5e\n",Hist->GetBinCenter(i),Hist->GetBinContent(i));
+    }
+  }
 }

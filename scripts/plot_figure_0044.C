@@ -7,7 +7,7 @@ plot_data_t* plot_figure_0044(int Figure, int Print) {
 
   const char* book       = "pipenu";
   const char* ana_job    = "murat_drpc_ana.0000";
-  const char* ana_module = "DegraderRpcAna";
+  const char* ana_module = "murat_DrpcAna";
   //  const char* hist_name  = "simp_205/y_vs_x";
 
   plot_data_t* pdata     = new plot_data_t(3);   // 1 histogram
@@ -23,6 +23,7 @@ plot_data_t* plot_figure_0044(int Figure, int Print) {
   p.hd[0].fLabel       = "vd09";
   p.hd[0].fDrawOpt     = "h";
   p.hd[0].fLineColor   = kRed+2;
+  p.hd[0].fLineWidth   = 2;
   // p.hd[0].fMarkerColor = kBlack;
   // p.hd[0].fMarkerStyle = 20;
   // p.hd[0].fMarkerSize  = 0.1;
@@ -32,8 +33,8 @@ plot_data_t* plot_figure_0044(int Figure, int Print) {
   p.hd[1].fRebin       = 1;
   p.hd[1].fLabel       = "vd10";
   p.hd[1].fDrawOpt     = "h";
-  p.hd[1].fLineColor   = kBlue+2;
-  p.hd[1].fFillColor   = kBlue+2;
+  p.hd[1].fLineColor   = kRed+3;
+  p.hd[1].fFillColor   = kRed+3;
   p.hd[1].fFillStyle   = 3004;
   // p.hd[1].fMarkerColor = kBlack;
   // p.hd[1].fMarkerStyle = 20;
@@ -44,8 +45,8 @@ plot_data_t* plot_figure_0044(int Figure, int Print) {
   p.hd[2].fRebin       = 1;
   p.hd[2].fLabel       = "vd13";
   p.hd[2].fDrawOpt     = "h";
-  p.hd[2].fLineColor   = kGreen+2;
-  p.hd[2].fFillColor   = kGreen+2;
+  p.hd[2].fLineColor   = kBlue+2;
+  p.hd[2].fFillColor   = kBlue+2;
   p.hd[2].fFillStyle   = 3005;
   // p.hd[2].fMarkerColor = kBlack;
   // p.hd[2].fMarkerStyle = 20;

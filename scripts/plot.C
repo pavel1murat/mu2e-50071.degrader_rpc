@@ -26,6 +26,7 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "pipenu/ana/scripts/init_pipenu_datasets.C"
 
+#include "plot_figure_0009.C"           // sum mom at VD10
 #include "plot_figure_0010.C"           // sum mom at VD10
 #include "plot_figure_0013.C"           // sum mom at VD13
 #include "plot_figure_0021.C"           // stopped pion time, weighted
@@ -72,6 +73,7 @@ plot_data_t* plot(int Figure, int Print = 0) {
 //-----------------------------------------------------------------------------
 // fig   10, 13: 
 //-----------------------------------------------------------------------------
+  if      (Figure ==    9) pdata = plot_figure_0009(Figure,Print);  // P1+P2 at VD09
   if      (Figure ==   10) pdata = plot_figure_0010(Figure,Print);  // P1+P2 at VD10
   if      (Figure ==   13) pdata = plot_figure_0013(Figure,Print);  // P1+P2 at VD12
   if      (Figure ==   21) pdata = plot_figure_0021(Figure,Print);  // stopped pion time

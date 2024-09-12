@@ -187,16 +187,41 @@ TODO items:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section {Introduction}
+When negative pions are stopped in hydrogen, they get captured by the hydrogen atoms
+with the following interactions proceeding via two main channels:
+$\pi^- p \to n\pi^0$ and $\pi^- p \to n \gamma$.
+
+The second channel has a branching ratio close to 40\% and it produces monochromatic
+photons with the energy E=129.4 MeV~\cite{something_on_RPC}.
+
+The 129.4 MeV peak from $\pi^- p \to n \gamma$ is also clearly visible on hydrogen-containing
+compounds, see for example \cite{}.
+
+Using such a compound, for example polyethylene, as a material for the Mu2e pion degrader
+disk may allow using the 129.4 MeV photons for calibrating the detector momentum scale.
+
+Calibration requires one additional element - a this converter ring located next to the degrader
+at a sufficiently large radius, of the order of R $\sim$ 25 cm. Photons converted there would
+produce a $e^+e^-$ pair, with both an electron and a positron producing sufficient number of
+the tracker hits for both tracks to be reconstructed. 
+The converted photon energy can be then determined as the sum of the two reconstructed
+track momenta, $E = P_{e^-} + P_{e^+}$ 
+
+All momentum scale calibration approaches discussed so far assume that the magnetic field
+in the detector solenoid is reduced \cite{MU2E_48630_PIPLUSENU}.
+The calibration discussed in this note can be performed in the nominal magnetic field.
 
 \include{rpc_on_hydrogen}
 \include{geometry_optimization}
 \include{reconstructed_spectrum}
+\include{track_reconstruction_status}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Electric current}
-When inserted into the beam, the degrader stops the beam particles, mostly electrons.
-Therefore, to avoid the charge accumulation, the degrader needs to be grounded.
-An estimate of the electric current can be obtained as follows:
+When inserted into the beam, the degrader stops the beam particles, which are
+mostly low energy, MeV-range, electrons. To avoid the accumulation of the electric charge,
+the degrader needs to be grounded. An estimate of the electric current can be obtained
+as follows:
 \begin{itemize}
 \item
   assume that degrader stops all beam flash particles
@@ -208,8 +233,6 @@ An estimate of the electric current can be obtained as follows:
   the corresponding electric current is $I ~=~ 7 \cdot 10^{-7} \times 1.6 \cdot 10^{-19} / {1.7 \cdot 10^{-6}} \sim 7 \cdot 10^{-6}$ A,
   or $\sim$ 10 microamperes
 \end{itemize}
-
-
 
 \include{calibration_time}
 
