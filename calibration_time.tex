@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Estimate of the time needed for momentum calibration}
 Calibration with RPC on hydrogen allows to determine the momentum scale of the experiment.
@@ -11,11 +12,11 @@ and estimate the time needed for the calibration.
 \item 
 From $ 2.5 \times 10^8 $ protons on target, 67.42 negative pions stop on the $\rm{CH_2}$ part of the degrader at T>200ns.
 \item 
-A negative pion stopped in $\rm{CH_2}$ has a probability of about $ 5 \times 10^{-3} $ of producing a 129.4 MeV RPC photon from capture on hydrogen (Section 3).
+  A negative pion stopped in $\rm{CH_2}$ has a probability of about $ 5 \times 10^{-3} $ of producing a 129.4 MeV RPC photon from capture on hydrogen (Section 3).
 \item 
-The optimal geometry from Section 4 places a gold converter at radius R=25.0cm with thickness 0.1mm. Of $10^5$ RPC photons generated with angle 0<$\cos \theta$<0.1, 139 produce $e^+ e^-$ pairs that can likely be reconstructed in the tracker. Events counted as likely reconstructable have $e^+$ and $e^-$ each with at least 20 straw hits and momentum P > 30MeV/c. 
+The optimal geometry from Section 4 places a gold converter at radius R=25.0cm with thickness 0.1mm. Of $10^7$ RPC photons generated with angle 0<$\cos \theta$<0.2, 10789 produce $e^+ e^-$ pairs that can likely be reconstructed in the tracker (Section 5). Events counted as likely reconstructable have $e^+$ and $e^-$ each with at least 20 straw hits and momentum P > 30MeV/c. Scaling to the full range of photon angles reduces the yield by a factor of 0.2/2, to around $10^{-4}$  per RPC photon. 
 \end{itemize}
-The product of these first three factors is a calibration event rate on the order of $10^{-12} $ per POT.
+The product of these first three factors is a calibration event rate on the order of $10^{-13} $ per POT.
 }
 
 \begin{itemize}
@@ -24,34 +25,19 @@ The product of these first three factors is a calibration event rate on the orde
 \item
   {\red how many events do we need ?} \kate{Estimates in the remaining items assume that 1000 $ \gamma \to e^+ e^- $ events would be sufficient to reconstruct the high-energy edge of the 129.4 MeV RPC photon momentum distribution.}
 \item
-  \kate{For a yield of $10^{-12}$ events/POT, collecting 1000 events requires $10^{15}$ protons on target.
+  \kate{For a yield of $10^{-13}$ events/POT, collecting 1000 events requires $10^{16}$ protons on target.
   In one-batch mode, an average expected pulse intensity is $1.6 \times 10^7$, with one pulse every 1695ns for about 0.4s of each 1.4s Main Injector cycle. The resulting rate is $2.7 \times 10^{12}$ protons/sec. }
-%\item
-%  For a yield of $10^{-13}$ events/POT, collecting 1000 events requires $10^{16}$ protons on target.
-%  In one-batch mode, an average expected pulse intensity is $1.6 \times 10^7$, and
-%  an average  pulse rate of 1$.6 \times 10^5$ pulses/sec correspond to the rate of $2.5 \times 10^{12}$ protons/sec.
 \item
   Assuming running at 10\% of nominal beam intensity and the data collection efficiency of 50\%,
   collecting 1000 reconstructable \kate{ $ \gamma \to e^+ e^- $ events would require on the order of
-  $10^{15}/( 0.1 \cdot 0.5 \cdot  2.7 \times 10^{12}) \sim 10^4$ seconds, achievable in} one day of running.
-%\item
-%  Assuming running at 10\% of nominal beam intensity and the data collection efficiency of 50\%,
-%  collecting 1000 reconstructable \piplusenu\ events would require
-%  $10^{16}/(1.25 \times 10^{11}) \sim 10^5$ seconds, or about one day of running.
+  $10^{16}/( 0.1 \cdot 0.5 \cdot  2.7 \times 10^{12}) \sim 10^5$ seconds,} or about one day of running.
 \item
   running at 10\% of the nominal beam intensity in one-batch mode and with the digitization starting
   at 200 ns corresponds to the total number of background hits per microbunch of about 200,
   so the pileup at T>300 ns should not be a problem.
 \end{itemize}
 
-\kate{
-\bigskip
-  Potential changes:
-  \begin{itemize}
-  \item 
-    Update with simulation results using larger photon angle. Earlier results here follow Section 4 for consistency. 
-  \end{itemize}
-}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
