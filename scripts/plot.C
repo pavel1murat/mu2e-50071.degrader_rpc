@@ -37,6 +37,9 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0036.C"           // stopped pions y:p CH2
 #include "plot_figure_0037.C"           // stopped pions y:p CH2
 #include "plot_figure_0044.C"           // RPC04 sm 09:10:13
+
+#include "plot_figure_0051.C"           // CELE0B0 vs CELE3B0: trk_0/p
+#include "plot_figure_0052.C"           // CELE0B0 vs CELE3B0: trk_0/p 103.6-105
 //-----------------------------------------------------------------------------
 // real [machine-dependent] values of Mu2eNotesDir and Mu2eHistDir 
 // should be defined in .rootrc
@@ -85,6 +88,9 @@ plot_data_t* plot(int Figure, int Print = 0) {
   if      (Figure ==   37) pdata = plot_figure_0037(Figure,Print);  // CH2 stopped pion Y vs P
 
   if      (Figure ==   44) pdata = plot_figure_0044(Figure,Print);  // RPC04: smom vd09:10:13
+
+  if      (Figure ==   51) pdata = plot_figure_0051(Figure,Print);  // CELE0B0 vs CELE3B0 trk_0/p
+  if      (Figure ==   52) pdata = plot_figure_0052(Figure,Print);  // CELE0B0 vs CELE3B0 trk_0/p 103.6-105
 
   return pdata;
 }
