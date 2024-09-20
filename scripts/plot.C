@@ -40,6 +40,8 @@ pipenu::Analysis* gPipenu;           // same
 
 #include "plot_figure_0051.C"           // CELE0B0 vs CELE3B0: trk_0/p
 #include "plot_figure_0052.C"           // CELE0B0 vs CELE3B0: trk_0/p 103.6-105
+#include "plot_figure_0061.C"           // CELE1B0 vs CELE2B0: trk_0/p
+#include "plot_figure_0062.C"           // CELE1B0 vs CELE2B0: trk_0/p 103.6-105
 //-----------------------------------------------------------------------------
 // real [machine-dependent] values of Mu2eNotesDir and Mu2eHistDir 
 // should be defined in .rootrc
@@ -91,6 +93,9 @@ plot_data_t* plot(int Figure, int Print = 0) {
 
   if      (Figure ==   51) pdata = plot_figure_0051(Figure,Print);  // CELE0B0 vs CELE3B0 trk_0/p
   if      (Figure ==   52) pdata = plot_figure_0052(Figure,Print);  // CELE0B0 vs CELE3B0 trk_0/p 103.6-105
+
+  if      (Figure ==   61) pdata = plot_figure_0061(Figure,Print);  // CELE1B0 vs CELE2B0 trk_0/p
+  if      (Figure ==   62) pdata = plot_figure_0062(Figure,Print);  // CELE1B0 vs CELE2B0 trk_0/p 103.6-105
 
   return pdata;
 }
