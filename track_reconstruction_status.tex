@@ -74,6 +74,26 @@ the positron track has not been found.
   \label{figure:event_display}
 \end{figure}
 
+
+A second type of misreconstruction occurs when hits from both particles are combined to make an unrealistic track with larger radius than either true track. These can occur in place of reconstruction for an individual particle, or in addition to well-reconstructed tracks. Figure~\ref{figure:he_artifact_evts} shows two examples. Taking the sum of momenta for cases with one or more of these combined tracks can significantly overestimate the true total momentum, and results in high energy artifacts out beyond the original RPC photon energy. As part of track reconstruction improvements, better separation of hits between the two tracks will be needed to recover some of these events. 
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0.) {
+        \includegraphics[width=0.54\textwidth]{png/rpc04b0s54r0100_1210_0_112009}
+    };
+    \node[anchor=south west,inner sep=0] at (9.8,0.) {
+        \includegraphics[width=0.54\textwidth]{png/rpc04b0s54r0100_1210_0_100123}
+    };
+  \end{tikzpicture}
+  \caption{
+    \label{figure:he_artifact_evts}
+   Tracker XY view for two example events where the existing reconstruction combines hits from both electron and positron to make tracks with unrealistic large transverse momentum. Circles include all reconstructed tracks for these events, both artifacts and well-reconstructed tracks (no MC truth tracks are shown here). 
+  }
+  \label{figure:he_artifact_evts}
+\end{figure}
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
