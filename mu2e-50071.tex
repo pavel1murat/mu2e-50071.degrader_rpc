@@ -40,6 +40,7 @@
 \usepackage[all]{hypcap}
 
 \usepackage[normalem]{ulem}  % for striking out
+\usepackage{soul}
 % \usepackage{fancyhdr}
 % \pagestyle{fancy}
 % \fancyhead[C]{}
@@ -97,6 +98,7 @@
 \newcommand {\dlt}[1]    {{\violet \sout{#1}}} %alternate delete color
 \newcommand {\add}[1]    {{\red #1}}
 \newcommand {\alt}[1]    {{\green #1}} %alternate comment color
+\newcommand {\hlite}[1]  {{\red      \ul{#1}}}   % needs xcolor, soul
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % for editors
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,26 +133,30 @@
 
   \begin{abstract}
     \vspace{0.2in}
-    Radiative pion capture (RPC) on hydrogen  provides a unique opportunity to calibrate
-    the Mu2e momentum scale at full field.
-
-    Kinematic edge of the momentum distribution of 129.4 MeV RPC photons
-    reconstructed in $\gamma \to e^+e^-$ channel could be used as a calibration line.
-
-    We investigate whether the rate of events of interest is sufficient for the calibration.
-
-    Color legend:
     
-    \begin{itemize}
-    \item
-      \kate{color for Kate}
-    \item 
-      \pasha{color for Pasha}
-    \item
-      {\red color for TODO items}
-    \end{itemize}
+    The pion degrader reduces the background from muon decays in flight to facilitate
+    the momentum scale calibration with \piplusenu\ decays. That calibration needs to
+    be performed at $B \simeq 0.7$ T, so the determined momentum scale would need to be
+    extrapolated to the nominal field value, B = 1 T.
+    
+    With small modifications, the pion degrader could become an instrument
+    also allowing to calibrate the Mu2e momentum scale in full field.
+    The calibration at full field is based on reconstruction of a 129.4 MeV photon
+    peak from RPC on hydrogen, $\pi^- p \to n \gamma$.
+%
+    The converted photon energy is given by the $e^+e^-$ invariant mass,
+    This note demonstrates that due to relatively small multiple scattering,
+    the sum of the electron an positron momenta gives a good approximation
+    of the $e^+e^-$ invariant mass. Thus reconstruction of the energy of a photon
+    converted several meters in upstream of the tracker only needs the $e^+$ and $e^-$
+    track momenta to be reconstructed, but doesn't require the track extrapolation
+    back to the degrader.
 
-      \end{abstract}
+    Under realistic assumptions, the time needed to calibrate the momentum scale
+    to the accuracy better then 100 keV while running at 10\% of the nominal proton beam
+    intensity is about one day.
+
+  \end{abstract}
 
 \end{titlepage}
 % \frontmatter
@@ -182,9 +188,13 @@ TODO items:
 
 \begin{itemize}
 \item
-  TODO: need a figure with the geometry drawing
+  check references
 \item
-  TSdA4 : what is its impact on the CE acceptance ?
+  check section names
+\item
+  add scripted fits with printed fit errors with enough digits 
+\item
+  describe datasets
 \end{itemize}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -194,25 +204,25 @@ Negative pions stopped in hydrogen get captured by the hydrogen atoms,
 with the following interactions proceeding via two main channels:
 $\pi^- p \to n\pi^0$ and $\pi^- p \to n \gamma$.
 
-The second channel has a branching ratio close to 40\% and it produces monochromatic
-photons with the energy E=129.4 MeV~\cite{something_on_RPC}.
+The second channel has a branching ratio close to 40\% and as both initial state particles
+are at rest, the outgoing photons are monochromatic with the energy E=129.4 MeV~\cite{something_on_RPC}.
 
 The 129.4 MeV peak from $\pi^- p \to n \gamma$ is also clearly visible on hydrogen-containing
-compounds, see for example \cite{}.
+compounds, for example, polyethylene \cite{}.
 
-Using such a compound, for example polyethylene, as a material for the Mu2e pion degrader
-disk may allow using the 129.4 MeV photons for calibrating the detector momentum scale.
+Using such a compound as a material for the Mu2e pion degrader disk may allow to calibrate
+the Mu2e momentum scale at B = 1 T.
 
-Calibration requires one additional element - a this converter ring located next to the degrader
-at a sufficiently large radius, of the order of R $\sim$ 25 cm. Photons converted there would
-produce a $e^+e^-$ pair, with both an electron and a positron producing sufficient number of
-the tracker hits for both tracks to be reconstructed. 
-The converted photon energy can be then determined as the sum of the two reconstructed
-track momenta, $E = P_{e^-} + P_{e^+}$ 
-
+The scale calibration requires one additional element - a this converter ring located next
+to the degrader at a sufficiently large radius, of the order of R $\sim$ 25 cm.
+Photons converted there would produce a $e^+e^-$ pair, with both an electron and
+a positron producing sufficient number of the tracker hits for both tracks
+to be reconstructed. The converted photon energy can be then determined as the sum
+of the two reconstructed track momenta, $E = P_{e^-} + P_{e^+}$ 
 All momentum scale calibration approaches discussed so far assume that the magnetic field
 in the detector solenoid is reduced \cite{MU2E_48630_PIPLUSENU}.
-The calibration discussed in this note can be performed in the nominal magnetic field.
+An advantage of the calibration discussed in this note is that it can be performed
+without reducing the DS magnetic field.
 
 \include{rpc_on_hydrogen}
 \include{geometry_optimization}
@@ -244,8 +254,21 @@ as follows:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section {Summary}
 
-With small modifications, the pion degrader becomes an instrument to calibrate the Mu2e
-momentum scale in full field.
+The pion degrader reduces the background from muon decays in flight to facilitate
+the momentum scale calibration with \piplusenu\ decays. That calibration needs to
+be performed at $B \simeq 0.7$ T, so the determined momentum scale would need to be
+extrapolated to the nominal field value, B = 1 T.
+
+With small modifications, the pion degrader could become an instrument
+for calibrating the Mu2e momentum scale in full field. This calibration is based on
+reconstruction of a 129.4 MeV photon peak in the $e^+e^-$ invariant mass spectrum.
+%
+This note demonstrates that due to small multiple scattering the sum of the
+electron an positron momenta gives a good approximation of the $e^+e^-$ invariant mass.
+
+Under realistic assumptions, the time needed to calibrate the momentum scale
+to the accuracy better then 100 keV while running at 10\% of the nominal proton beam
+intensity is about one day.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -23,6 +23,7 @@ plot_data_t* plot_figure_0052(int Figure, int Print) {
   p.hd[0].fDrawOpt     = "h";
   p.hd[0].fLineColor   = kRed+2;
   p.hd[0].fLineWidth   = 2;
+  p.hd[0].fStatFormat  = "6.5g";
   // p.hd[0].fMarkerColor = kBlack;
   // p.hd[0].fMarkerStyle = 20;
   // p.hd[0].fMarkerSize  = 0.1;
@@ -35,6 +36,7 @@ plot_data_t* plot_figure_0052(int Figure, int Print) {
   p.hd[1].fLineColor   = kBlue+3;
   p.hd[1].fFillColor   = kBlue+3;
   p.hd[1].fFillStyle   = 3004;
+  p.hd[1].fStatFormat  = "6.5g";
   // p.hd[1].fMarkerColor = kBlack;
   // p.hd[1].fMarkerStyle = 20;
   // p.hd[1].fMarkerSize  = 0.1;

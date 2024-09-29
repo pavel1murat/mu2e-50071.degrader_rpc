@@ -1,7 +1,11 @@
 %
 \section{Track reconstruction}
-The (P1+P2) distribution for events with two reconstructed tracks is shown in Figure~\ref{figure:t2_1_smom_0}.
-No track selection cuts are applied. A $\gamma \to e^+e^-$ peak  is clearly seen.
+
+Running TrkPatRec+CalPatRec p057 track reconstruction and selecting events
+with two reconstructed tracks yields the distribution of $E_\gamma$
+shown in Figure~\ref{figure:pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_0}
+No track selection cuts are applied. A $\gamma \to e^+e^-$ peak  is clearly seen just below
+130 MeV/c..
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -15,43 +19,29 @@ No track selection cuts are applied. A $\gamma \to e^+e^-$ peak  is clearly seen
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:t2_1_smom_0}
+    \label{figure:pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_0}
     Sum of the two reconstructed track momenta
   }
   \label{figure:event_display}
 \end{figure}
 
-Figure~\ref{figure:t2_1_smom_1_fit} shows the fit of the conversion peak with the function
-defined by \ref{}... The offset of the reconstructed peak due to the energy losses is 1 MeV,
-and the peak FWHM is also close to 1 MeV.
+Figure~\ref{figure:pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_1_fit} shows the fit
+of the conversion peak with the SU2020 resolution function.
+The offset of the reconstructed peak due to the energy losses is 1 MeV, and the FWHM
+of the distribution is also close to 1 MeV.
 
-Comparison of Figure ~\ref{figure:t2_1_smom_1_fit} to Figure ~\ref{figure:t2_1_smom_1_fit}
-gives the reconstruction efficiency for preselected events of about 10\% which is fairly low.
-
-\begin{figure}[H]
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] at (0,0.) {
-      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
-      \makebox[\textwidth][c] {
-        \includegraphics[width=0.95\textwidth]{png/pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_1_fit}
-      }
-    };
-    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
-    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
-  \end{tikzpicture}
-  \caption{
-    \label{figure:t2_1_smom_1_fit}
-    Sum of the two reconstructed track momenta
-  }
-  \label{figure:event_display}
-\end{figure}
-
-However the Mu2e track reconstruction, first of all - the pattern recognition, has never
-been optimized for low momentum tracks. An example of a misreconstructed $\gamma \to e^+e^-$
-event is shown in Figure ~\ref{figure:event_display}. In this event there are two particles,
+Comparison of Figure ~\ref{figure:pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_0} 
+to Figure ~\ref{figure:pipenu_bpip4b0_murat_track_ana_trk_0_p_fit}
+gives an estimate of the reconstruction efficiency for preselected events of about 10\%,
+which is rather low.
+%
+However the Mu2e track reconstruction, first of all - the pattern recognition,
+has never been tuned for low momentum tracks. An example of a $\gamma \to e^+e^-$
+event with two potentially reconstructable, but only one reconstructed track
+is shown in Figure ~\ref{figure:event_display}. In this event there are two particles,
 an electron and a positron entering the tracker with the momenta of 83.7 and 43.5 MeV/c
-correspondingly. Only one of them, the 83.7 MeV/c electron, has a reconstructed track, and 
-the positron track has not been found.  
+respectively. A particle with the higher momentum, a 83.7 MeV/c electron, has a reconstructed track,
+and  the positron track has not been found.  
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -74,7 +64,6 @@ the positron track has not been found.
   \label{figure:event_display}
 \end{figure}
 
-
 A second type of misreconstruction occurs when hits from both particles are combined to make an unrealistic track with larger radius than either true track. These can occur in place of reconstruction for an individual particle, or in addition to well-reconstructed tracks. Figure~\ref{figure:he_artifact_evts} shows two examples. Taking the sum of momenta for cases with one or more of these combined tracks can significantly overestimate the true total momentum, and results in high energy artifacts out beyond the original RPC photon energy. As part of track reconstruction improvements, better separation of hits between the two tracks will be needed to recover some of these events. 
 
 \begin{figure}[H]
@@ -93,6 +82,30 @@ A second type of misreconstruction occurs when hits from both particles are comb
   \label{figure:he_artifact_evts}
 \end{figure}
 
+
+Figure~\ref{figure:pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_1_fit} shows the fit of the
+reconstructed $\pi^- p \to n \gamma$ peak with the SU2020 resolution function.
+The peak has its maximum at 128.4 MeV, about 200 keV below the fit to the MC truth,
+and its width is about 1 MeV FWHM. 
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      \makebox[\textwidth][c] {
+        \includegraphics[width=0.95\textwidth]{png/pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_1_fit}
+      }
+    };
+    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
+    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
+  \end{tikzpicture}
+  \caption{
+    \label{figure:pipenu_bpip4b0s54r0100_murat_drpc_ana_t2_1_smom_1_fit}
+    fit of the $\pi^- p \to n \gamma$ peak with the SU2020 resolution function
+    in the range [120,135] MeV \\
+    \hlite{make fit errors visible}
+  }
+\end{figure}
 
 %%% Local Variables:
 %%% mode: latex

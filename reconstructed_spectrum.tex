@@ -1,58 +1,89 @@
-\section{Reconstructed photon spectrum}
+\section{Reconstruction of the photon energy}
 
-For the photon energy of $\sim$ 130 MeV, the present reconstruction code is not expected
-to reconstruct $\gamma \to e^+e^-$ events efficiently.
+As the photon is massless, an electron and a positron from $\gamma \to e^+e^-$ have their
+momenta parallel to each other in the production vertex. In that point, the photon energy
+can be approximated as
+\begin{equation} \label{eq:egamma}
+  E_\gamma = P(e^+) + P(e^-) 
+\end{equation}
+               
+XY views of two typical events are presented in Figure~\ref{figure:rpc07b0s51r0100_xy_view},
+Despite $e^+e^-$ pairs are produced several meters upstream of the tracker,
+the multiple scattering is small and trajectories of the two particles
+in the tracker look like two tangent circles. Because of that, an approximation of \ref{eq:egamma}
+should hold rather well, and it will be used in this note.
 
-{\red run reconstruction and demonstrate that ? }
-
-However, the intrinsic resolution of the tracker should contribute less than 0.5 MeV to the
-reconstructed width of the $e^+e^-$ conversion peak.
-
-We therefore use the MC truth - the sum of the two MC particle momenta recorded in front
-of the tracker - as a proxy to the reconstructed photon momentum
 \begin{figure}[H]
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] at (0,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
       \makebox[\textwidth][c] {
-        \includegraphics[width=0.9\textwidth]{png/figure_00010}
+        \includegraphics[width=0.9\textwidth]{png/rpc07b0s51r0100_event_display_xy_reconstructed}
       }
     };
     % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:sum_mom_vd10}
-    P1+P2 at VD10
+    \label{figure:rpc07b0s51r0100_xy_view}
+    XY tracker view of $\gamma \to e^+e^-$ events
   }
 \end{figure}
+
+\del{
+For the photon energy of $\sim$ 130 MeV, the present reconstruction code is not expected
+to reconstruct $\gamma \to e^+e^-$ events very efficiently.
+}
+\del{
+However, the intrinsic resolution of the tracker should contribute less than 0.5 MeV to the
+reconstructed width of the $e^+e^-$ conversion peak.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Converter thickness}
+
+The converter is simulated as a thin gold foil. To choose an optimal thickness ,
+we considered three different opetions: 1mm-thick converter, 200 um - and 100 um -thick foils.
+Shown in Figure~\ref{figure:sum_mom_vd13}(left) are the distributions of $E_{gamma}^{VD13} = P(e^+)^{VD13} + P(e^-)^{VD13}$,
+the sum of MC momenta of an electron and a positron plotted for events with
+
+\begin{itemize}
+\item
+  an electron an a positron producing N>=20 straw hits in the tracker each
+\item
+  minimal, out of the two, particle momentum at VD13 P > 30 MeV/c
+\end{itemize}
 
 \begin{figure}[H]
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] at (0,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
-      \makebox[\textwidth][c] {
-        \includegraphics[width=0.9\textwidth]{png/figure_00013}
-      }
+      % \makebox[\textwidth][c] {
+        \includegraphics[width=0.54\textwidth]{pdf/figure_00013}
+      % }
+    };
+    \node[anchor=south west,inner sep=0] at (10,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      % \makebox[\textwidth][c] {
+        \includegraphics[width=0.54\textwidth]{pdf/figure_00010}
+      % }
     };
     % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
     \label{figure:sum_mom_vd13}
-    P1+P2 at VD09, VD10, VD13
+    left: $E_\gamma^{VD13}$ for 1mm, 200 um, and 100-um thick Au converters at R=25 cm ; \\
+    right: distributions of $E_\gamma^{VD10}$ for 1mm, 200 um, and 100-um thick Au converters at R=25 cm
   }
 \end{figure}
 
-The converter thickness is chosen based on the distributions shown in Figure~\ref{figure:sum_mom_vd13}.
-Plotted: $P_{tot} = P_1 + P_2$ at VD13, virtual detector in front of the tracker fro events with
-two particles, an electron and a positron with P > 30 MeV/c and producing 20 or more straw hits in the tracker each.
-Such particles provide a good proxy to the reconstructable tracks.
+From the left distribution, it becomes clear that while the increasing thickness of the converter improves the
+overall event yield, it is the thinnest out of the three considered converter options which produces
+more $\gamma \to e^+e^-$ events in the few highest energy bins than thicker converters.
 
-The event yield increases with the converter thickness. However of interest for the scale calibration
-are only events reconstructed close to the kinematic edge. 
-The highest yield of events with P > 128 Mev/c corresponds to the 100 um gold foil,
-and that makes the 100 um think converter a preference.
+Comparison of the left and right plots in Figure~\ref{figure:sum_mom_vd13} shows the scale of energy
+losses in the IPA and in the converter ring itself.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -66,22 +97,19 @@ and that makes the 100 um think converter a preference.
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:sum_mom_vd09_10_13}
-    P1+P2 at VD09, VD10, VD13
+    \label{figure:pipenu_bpip4b0_murat_track_ana_trk_0_p_fit}
+    fit of the $E_\gamma^{VD13}$ distribution with the SU2020 resolution function.
+    The mean energy loss of two particles traveling from the converter to the tracker is about 0.8 MeV,
+    the contribution of struggling to the energy resolution is $\sim 0.7$ MeV/c FWHM. \\
+    \hlite{need fit uncertainties to estimate the uncertainty on the edge position}
   }
 \end{figure}
 
-Figure ~\ref{figure:sum_mom_vd09_10_13} shows the $P_{tot}$ distribution for 100 um converter
-with the binning of 100 keV/c. and its fit with the function introduced
+Figure ~\ref{figure:pipenu_bpip4b0_murat_track_ana_trk_0_p_fit} shows the distribution of $E_\gamma^{VD13}$
+for 100 um converter with the binning of 100 keV/c and its fit with the resolution function introduced
 in the SU2020 paper \cite{SU2020_PAPER}. The most probable energy loss is about 800 keV/c, 
 and the resolution function has the FWHM of about 700 keV/c.
 These numbers are not very different from the corresponding numbers for conversion electrons.
-
-Assuming that similar to the CE case the width of the distribution is dominated by the energy losses,
-the reconstructed $\gamma \to e^+e^-$ peak will have the FWHM $\simeq 1$ MeV/c and the offset
-of about 1 MeV from its nominal position.
-
-{\red need fit uncertainties to estimate the uncertainty on the edge position }
 
 %%% Local Variables:
 %%% mode: latex

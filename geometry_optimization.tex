@@ -1,16 +1,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Degrader geometry}
 
-The pion degrader was initially introduced to suppress the background to \piplusenu\
-from muon decays in flight. It is a disk made of non-magnetic material inserted
-into the beam during the calibration runs and moved out of the beam for the data taking.
+The pion degrader was initially introduced in order to suppress the background to \piplusenu\
+from muon decays in flight. The degrader is a movable disk made of non-magnetic material,
+which gets inserted into the beam during the calibration runs and moved out of the beam
+during the regular data taking.
 
 \begin{figure}[H]
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] at (0,-10.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
       \makebox[\textwidth][c] {
-        \includegraphics[width=0.95\textwidth]{pdf/degrader_geometry_001}
+        \includegraphics[width=0.95\textwidth]{pdf/degrader_geometry_002}
       }
     };
     % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
@@ -18,27 +19,28 @@ into the beam during the calibration runs and moved out of the beam for the data
   \end{tikzpicture}
   \caption{
     \label{figure:degrader_geometry_001}
-    Schematic view of the simulated degrader geometry
+    Schematic view of the simulated degrader geometry, not up to scale
   }
 \end{figure}
 
-The considered degrader geometry is schematically shown in Figure~\ref{figure:degrader_geometry_001}.
+The simulated degrader geometry is schematically shown in Figure~\ref{figure:degrader_geometry_001}.
 A gold converter ring has the outer radius $R_{out}$ = 250mm, and the value of $R_{in}$ is defined
-by the converter thickness.
+by the converter thickness. The converter is slightly offset downstream wit respect to the $CH_2$ disk,
+so $e*+$ and $e^-$ produced in the converter do not cross it multiple times.
 
-From \piplusenu\ studies: the degrader disk thickness of 4 mm Ti is close to optimal.
-4mm of Ti translates into the total amount of material of $1.8 g/cm^2$, about twice that
-of the stopping target.
 \begin{itemize}
+\item 
+  From \piplusenu\ studies: the pion degrader disk thickness of 4 mm Ti is close to optimal.
+\item
+  4mm of Ti translates into the total amount of material of $\sim 1.8 g/cm^2$,
+  about twice the material of the stopping target.
 \item
   9mm CH2 + 1.0mm Pb: : 2.0 $g/cm^2$   .. $\pi*15^2*(0.9*0.95 + 0.08*11.34): \simeq 2 g/cm^2$
 \item
    9mm CH2 + 0.8mm Pb: : $1.76 g/cm^2$
  \item
-   reduce the outer radius of the degrader disk - don't need 15 cm
- \item
-   CH2 disk R=14 cm, weight        : $0.9*0.95*\pi*14^2$ = 526 gr \\
-   Pb  foil R=10cm thickness 0.8mm : 0.08*11.34*314    = 285 gr \\
+   CH2 disk R=14 cm, weight        : $0.90*0.95*\pi*14^2 ~= 526$ gr \\
+   Pb  foil R=10cm thickness 0.8mm : $0.08*11.34*\pi*10^2 = 285$ gr \\
    total                           : 811 gr
 \end{itemize}
 
@@ -46,44 +48,68 @@ To make sure that $e^+$ and $e^-$ do not cross the converter foil multiple times
 the converter is moved downstream by 1cm with respect to the degrader disk.
 
 The converter foil could be supported by a carbon foam disk surrounding the degrader.
-A potentially more attractive alternative could be to support the converter placed
-on a thin carbon foam ring, on the OPA. That would allow to increase the acceptance
-by increasing the width of the converter ring.
-
+A potentially more attractive alternative could be to have the converter placed
+on a thin carbon foam ring and supported from the OPA. 
 As the $\gamma \to e^+e^-$ acceptance is proportional to the width of the converter ring,
-making it 3cm wide instead of 1 cm wide would increase the acceptance by a factor of x3.
+making it, for example, 3cm wide instead of 1 cm wide would increase the acceptance
+by a factor close to x3.
+
+This option is discussed in Section~\ref{section:geometry_v4}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{pion stops}
+\subsection{Stopped negative pions}
 
-Momentum and time:
+\begin{itemize}
+\item 
+  Simulation of the negative pion beam follows the standard 2-stage model.
+  Stage 2 produces three separate datasets of pions stops in the CH2, Pb, and the ST.
+  The scheme allow to resimulate the pion stop datasets w/o repeating more time consuming
+  first stage of the simulation.
+\item
+  To improve the simulation efficiency pion decays are disabled. The calculated by Geant4
+  pion survival probabilities are used as event weights in the normalization procedure.
+\end{itemize}
+
+Distributions of momentum and time for pions stopped in it CH2, Pb foil, and the
+stopping target are shown in Figure \ref{figure:stopped_pim_mom_time}.
 
 \begin{figure}[H]
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] at (0,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
       % \makebox[\textwidth][c] {
-        \includegraphics[width=0.5\textwidth]{png/figure_00021}
+        \includegraphics[width=0.5\textwidth]{pdf/figure_00021}
       % }
     };
     \node[anchor=south west,inner sep=0] at (10,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
       % \makebox[\textwidth][c] {
-        \includegraphics[width=0.5\textwidth]{png/figure_00022}
+        \includegraphics[width=0.5\textwidth]{pdf/figure_00022}
       % }
     };
     % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:sum_mom_vd13}
+    \label{figure:stopped_pim_mom_time}
     Stopped pions: distributions of momentum and time
   }
 \end{figure}
 
+It is worth noting that pions stopped in the $CH_2$ are the slowest ones.
+Therefore, selecting events with the pion stop time above certain threshold, i.e. $\sim 200$ ns, 
+significantly suppresses contributions of the stopping target and the Pb foil to any measurement.
+T0 = 200 ns is also approximately the time where the instantaneous beam flash
+hit rate gets reduced down to the level allowing the measurements. For the DAQ operations,
+that means that the digitization start time should be lowered to $\sim 250$ ns,
+which, at a reduced proton beam intensity, looks quite realistic.
 
-The correlation between the vertical position of stopped particles in the degrader and the particle momentum
-on exit from the TS is shown in Figure ~\ref{figure:y_vs_p_deg}.
+Another interesting correlation is the correlation between the pion momentum on exit from the TS momentum
+and the vertical coordinate of the pion stop point. Figure ~\ref{figure:y_vs_p_deg} shows this correlation
+for pions stopped in the $CH_2$ and Pb parts of the degrader. The Y distribution of the pion stops
+in the Pb foil is offset down by several centimeters. The lower cut-off at R=100 mm is determined by the
+by the simulated radius of the Pb foil, R=100mm
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -108,11 +134,8 @@ on exit from the TS is shown in Figure ~\ref{figure:y_vs_p_deg}.
   }
 \end{figure}
 
-The slowest, least energetic, pions stop in the CH2 disk. In most cases, those are also the ones arriving
-to the DS later. Pions passing through the CH2 disk have momenta above 60 MeV/c. Due to the overcompensated
-vertical drift in the TSu, their Y distribution is offset vertically in the negative direction -
-see Figure ~\ref{figure:y_vs_x_st}. Y distribution of pions stopping in the ST is also offset towards
-negative Y, but smeared by the pion motion.
+Y:X distributions of the pion stops in the $CH_2$ disk, Pb foil and the ST are shown in Figure ~\ref{figure:y_vs_x_st}.
+They reflect the correlation between the mean Y of the particle trajectory and the particle momentum.
 
 \begin{figure}[H]
   \begin{tikzpicture}

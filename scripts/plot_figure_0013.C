@@ -53,7 +53,7 @@ plot_data_t* plot_figure_0013(int Figure, int Print) {
   p.fXMin              = 0.;
   p.fXMax              = 200;
   p.fYMin              = 0; // 1e-16;
-  p.fYMax              = 70.; // 8e-12;
+  p.fYMax              = 100.; // 8e-12;
   p.fCanvasName        = Form("Figure_%04i",Figure);
   p.fName              = Form("figure_%05i",Figure);
   p.fLabel             = "";

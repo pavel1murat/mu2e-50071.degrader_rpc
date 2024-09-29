@@ -34,7 +34,7 @@ plot_data_t* plot_figure_0051(int Figure, int Print) {
   p.hd[1].fLabel       = "100 um Au converter ring";
   p.hd[1].fDrawOpt     = "h";
   p.hd[1].fLineColor   = kBlue+3;
-  p.hd[0].fStatFormat  = "6.5g";
+  p.hd[1].fStatFormat  = "6.5g";
   p.hd[1].fFillColor   = kBlue+3;
   p.hd[1].fFillStyle   = 3004;
   // p.hd[1].fMarkerColor = kBlack;
