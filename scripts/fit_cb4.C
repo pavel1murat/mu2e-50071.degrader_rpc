@@ -45,6 +45,9 @@
 // cpos1b0:  x2->init_parameters(200,92.3,0.67,3.1,1.3,8,7,4)
 // rpc04b0:  x3->init_parameters(1280,128.64,0.158,11.2,5,2,1.3,2.)
 ///////////////////////////////////////////////////////////////////////////////
+#ifndef __fit_cb4__
+#define __fit_cb4__
+
 #include "TMath.h"
 #include "TNamed.h"
 #include "TF1.h"
@@ -283,3 +286,5 @@ void cb4::fit(double XMin, double XMax) {
 
   // printf("total = %12.5f, HTail = %12.5f, htail/total : %12.5e\n",total,htail,htail/total);
 }
+
+#endif

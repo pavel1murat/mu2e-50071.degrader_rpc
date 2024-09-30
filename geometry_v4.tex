@@ -48,22 +48,32 @@ a narrow gap in between the TS and OPA.
   dataset family: rpc07b0
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Resolution in the photon energy}
+
+The distribution of $E_\gamma = P(e^+) + P(e^-)$ for the events with the reconstructed
+$e^+$ and $e^-$ tracks is shown in Figure~\ref{figure:t2_0_smom_1}.
+Overlaid is the fit of the distribution with the SU2020 function \cite{SU2020}.
+The $\chi^2/DOF$ of the fit is close to one, and with about 1000 events in the peak,
+an uncertainty on the peak position returned by the fitter is below 10 keV/c.
+This is a good indication that statistics of 1000 events should be sufficient
+to achieve the momentum scale calibration accuracy of 100 keV/c.
+
 \begin{figure}[H]
   \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] at (0,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
       \makebox[\textwidth][c] {
-        \includegraphics[width=0.95\textwidth]{pdf/pipenu_rpc07b0s51r0100_drpc_ana_t2_1_smom_1_fit}
+        \includegraphics[width=0.95\textwidth]{pdf/figure_00082}
       }
     };
     % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:t2_1_smom_0}
-    Sum of the two reconstructed track momenta and its fi.t 2cm wide converter in OPA
+    \label{figure:t2_0_smom_1}
+    Distribution of $E_\gamma = P(e^+) + P(e^-)$ for events with two reconstructed tracks
   }
-  \label{figure:event_display}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
