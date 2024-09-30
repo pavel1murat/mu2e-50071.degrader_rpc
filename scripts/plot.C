@@ -3,7 +3,7 @@
 // always print in .eps, convert to .png or .pdf in GNUMakefile
 //
 ///////////////////////////////////////////////////////////////////////////////
-const char* Mu2eNotesDir        = "/exp/mu2e/data/projects/pipenu/notes";     // mu2egpvm*
+const char* Mu2eNotesDir        = "/exp/mu2e/app/users/kciampa0/notes";     // mu2egpvm*
 const char* Mu2eHistDir         = "/exp/mu2e/data/projects/pipenu/hist";      // mu2egpvm*
 
 const char* NoteRepo            = "mu2e-50071.degrader_rpc";
@@ -20,6 +20,7 @@ double NPOT_pienu = 2.5e8;          // 500(s1 jobs)x500,000(events per s1 job)
 #include "Stntuple/scripts/plot_hist_1D.C"
 #include "Stntuple/scripts/plot_hist_2D.C"
 #include "pipenu/ana/Analysis.hh"
+#include "fit_cb4.C"
 
 stn_catalog*      catalog;           // has to be global
 pipenu::Analysis* gPipenu;           // same
@@ -42,6 +43,8 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0052.C"           // CELE0B0 vs CELE3B0: trk_0/p 103.6-105
 #include "plot_figure_0061.C"           // CELE1B0 vs CELE2B0: trk_0/p
 #include "plot_figure_0062.C"           // CELE1B0 vs CELE2B0: trk_0/p 103.6-105
+
+#include "plot_figure_0071.C"           // rpc07b0 fit trk_0/p
 //-----------------------------------------------------------------------------
 // real [machine-dependent] values of Mu2eNotesDir and Mu2eHistDir 
 // should be defined in .rootrc
@@ -96,6 +99,8 @@ plot_data_t* plot(int Figure, int Print = 0) {
 
   if      (Figure ==   61) pdata = plot_figure_0061(Figure,Print);  // CELE1B0 vs CELE2B0 trk_0/p
   if      (Figure ==   62) pdata = plot_figure_0062(Figure,Print);  // CELE1B0 vs CELE2B0 trk_0/p 103.6-105
+
+  if      (Figure ==   71) pdata = plot_figure_0071(Figure,Print);  // rpc07b0 ... fit 
 
   return pdata;
 }
