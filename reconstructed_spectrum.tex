@@ -1,8 +1,8 @@
 \section{Reconstruction of the photon energy}
 
-As the photon is massless, an electron and a positron from $\gamma \to e^+e^-$ have their
-momenta parallel to each other in the production vertex. In that point, the photon energy
-can be approximated as
+As the photon is massless, in the production vertex, an electron and a positron
+from $\gamma \to e^+e^-$ have their momenta parallel to each other.
+In that point, the photon energy can be approximated as
 \begin{equation} \label{eq:egamma}
   E_\gamma = P(e^+) + P(e^-) 
 \end{equation}
@@ -81,24 +81,38 @@ losses in the IPA and in the converter ring itself.
     \node[anchor=south west,inner sep=0] at (0,0.) {
       % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
       \makebox[\textwidth][c] {
-        \includegraphics[width=0.9\textwidth]{png/pipenu_bpip4b0_murat_track_ana_trk_0_p_fit}
+        \includegraphics[width=0.9\textwidth]{pdf/figure_00083}
       }
     };
     % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:pipenu_bpip4b0_murat_track_ana_trk_0_p_fit}
-    fit of the $E_\gamma^{VD13}$ distribution with the SU2020 resolution function.
+    \label{figure:00083}
+    fit of the $E_\gamma^{VD13}$ distribution with the SU2020 resolution function defined by
+    the Eq.\ref{eq:dio_mom_res}.
     The mean energy loss of two particles traveling from the converter to the tracker is about 0.8 MeV,
     the contribution of struggling to the energy resolution is $\sim 0.7$ MeV/c FWHM. \\
-    \hlite{need fit uncertainties to estimate the uncertainty on the edge position}
+    The fit uncertainty on x0, parameter corresponding to the maximum of the spectrum,
+    is less than 1 keV.
   }
 \end{figure}
 
-Figure ~\ref{figure:pipenu_bpip4b0_murat_track_ana_trk_0_p_fit} shows the distribution of $E_\gamma^{VD13}$
+Figure ~\ref{figure:00083} shows the distribution of $E_\gamma^{VD13}$
 for 100 um converter with the binning of 100 keV/c and its fit with the resolution function introduced
-in the SU2020 paper \cite{SU2020_PAPER}. The most probable energy loss is about 800 keV/c, 
+in the SU2020 paper \cite{MU2E_SU2020_PAPER}:
+
+\begin{equation}
+  \label{eq:dio_mom_res}
+  R(x) =
+ \begin{cases}
+    A_1 \cdot (B_1-x)^{-N_1}                                 & x < -\alpha_1 \\
+    A_0 \cdot \exp (a_0 \cdot (b_0 \cdot x - e^{b_0 \cdot x})) & -\alpha_1< x < \alpha_2 \\
+    A_2 \cdot (B_2+x)^{-N_2}                                 &  x > \alpha_2
+  \end{cases}.
+\end{equation}
+, where $x = p-p_0$, and $p_0$ is the position of the distribution maximum.
+The most probable energy loss is about 800 keV/c, 
 and the resolution function has the FWHM of about 700 keV/c.
 These numbers are not very different from the corresponding numbers for conversion electrons.
 

@@ -1,10 +1,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Degrader geometry}
+\section{$\pi^- p \to n \gamma$ photons as a calibration line}
 
-The pion degrader was initially introduced in order to suppress the background to \piplusenu\
-from muon decays in flight. The degrader is a movable disk made of non-magnetic material,
-which gets inserted into the beam during the calibration runs and moved out of the beam
-during the regular data taking.
+Photons from RPC on hydrogen could be used to calibrate the Mu2e momentum scale and, simultaneously, measure the momentum resolution.
+Consider a RPC  photon converting in the detector material 
+and producing an $e^+e^-$ pair. In case of a symmetric conversion, the momenta of both particles
+are $\sim$ 65 MeV/c. If the conversion radius is large enough, both an electron
+and a positron from $\gamma \to e^+ e^-$ may produce enough hits in the tracker
+so their tracks could be reconstructed and used to reconstruct the momentum of the
+converted photon.
+
+Acceptance is maximized for photons emitted at $90^o$ with respect to the DS axis. 
+
+The Mu2e detector has a component, the pion degrader, which with small modifications
+could be used for this calibration measurement. The degrader was initially introduced
+in order to suppress the background to \piplusenu\ from muon decays
+in flight \cite{MU2E_2527_PIPLUSENU},
+It is a movable disk made of non-magnetic material, which gets inserted into
+the beam during the calibration runs and moved out of the beam during
+the regular data taking.
+
+Making the degrader disk out of polyethylene and surrounding it, at a larger radius, 
+with a thin converter foil could allow to convert photons emitted at angles close to $90^o$
+with respect to the DS axis. A schematic view of the modified degrader geometry is presented in Figure~\ref{figure:degrader_geometry_v3}.
+
+The converter foil could be supported by a light carbon foam disk mounted on the degrader.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -18,15 +37,14 @@ during the regular data taking.
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:degrader_geometry_001}
+    \label{figure:degrader_geometry_v3}
     Schematic view of the simulated degrader geometry, not up to scale
   }
 \end{figure}
 
-The simulated degrader geometry is schematically shown in Figure~\ref{figure:degrader_geometry_001}.
-A gold converter ring has the outer radius $R_{out}$ = 250mm, and the value of $R_{in}$ is defined
-by the converter thickness. The converter is slightly offset downstream wit respect to the $CH_2$ disk,
-so $e*+$ and $e^-$ produced in the converter do not cross it multiple times.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Simulation} 
+A configuration of the Mu2e detector with the pion degrader, as shown in  Figure~\ref{figure:degrader_geometry_v3}, inserted in the beam has been simulated.
 
 \begin{itemize}
 \item 
@@ -42,34 +60,42 @@ so $e*+$ and $e^-$ produced in the converter do not cross it multiple times.
    CH2 disk R=14 cm, weight        : $0.90*0.95*\pi*14^2 ~= 526$ gr \\
    Pb  foil R=10cm thickness 0.8mm : $0.08*11.34*\pi*10^2 = 285$ gr \\
    total                           : 811 gr
+ \item 
+   The gold converter ring has the outer radius $R_{out}$ = 250mm,
+   and the value of $R_{in}$ is defined by the converter thickness.
+   The converter is slightly offset downstream with respect to the $CH_2$ disk,
+   so $e*+$ and $e^-$ produced in the converter do not cross it multiple times.
+
 \end{itemize}
 
-To make sure that $e^+$ and $e^-$ do not cross the converter foil multiple times,
-the converter is moved downstream by 1cm with respect to the degrader disk.
+For small, of the order of few cm, widths of the converter ring,
+the acceptance is proportional to the width.
+So making teh width, for example, 3cm instead of 1 cm wide would increase
+the acceptance by a factor close to x3. However, the space between the OPA
+and the TS available
+for the degrader installation is limited, about 5 cm along the Z axis, 
+and that limits the maximal width of the converter ring. Also, a large radius
+of the converter ring, R = 25-30 cm, could start limiting the movement of the
+degrader arm.
 
-The converter foil could be supported by a carbon foam disk surrounding the degrader.
 A potentially more attractive alternative could be to have the converter placed
-on a thin carbon foam ring and supported from the OPA. 
-As the $\gamma \to e^+e^-$ acceptance is proportional to the width of the converter ring,
-making it, for example, 3cm wide instead of 1 cm wide would increase the acceptance
-by a factor close to x3.
-
+on a thin carbon foam ring and supported inside the OPA. In this case,
+the width of the foil could be increased without introducing the space conflicts.
+Having the converter supported by the OPA would also simplify increasing
+the converter radius should that become necessary.
+%
 This option is discussed in Section~\ref{section:geometry_v4}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Stopped negative pions}
 
-\begin{itemize}
-\item 
-  Simulation of the negative pion beam follows the standard 2-stage model.
-  Stage 2 produces three separate datasets of pions stops in the CH2, Pb, and the ST.
-  The scheme allow to resimulate the pion stop datasets w/o repeating more time consuming
-  first stage of the simulation.
-\item
-  To improve the simulation efficiency pion decays are disabled. The calculated by Geant4
-  pion survival probabilities are used as event weights in the normalization procedure.
-\end{itemize}
+Simulation of the negative pion beam follows the standard 2-stage model.
+Stage 2 produces three separate datasets of pions stops in the CH2, Pb, and the ST.
+The scheme allow to resimulate the pion stop datasets w/o repeating more time consuming
+first stage of the simulation.
+To improve the simulation efficiency pion decays are disabled. The calculated by Geant4
+pion survival probabilities are used as event weights in the normalization procedure.
 
 Distributions of momentum and time for pions stopped in it CH2, Pb foil, and the
 stopping target are shown in Figure \ref{figure:stopped_pim_mom_time}.
