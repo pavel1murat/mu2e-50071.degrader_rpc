@@ -64,41 +64,7 @@
 % for portability, make sure all commands are included locally,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ForestGreen}{RGB}{20,109,20}
-%\include{commands}
-\newcommand {\blue}      {\color{blue}}
-\newcommand {\green}     {\color{ForestGreen}}
-\newcommand {\red}       {\color{red}}
-\newcommand {\purple}    {\color{purple}}
-\newcommand {\violet}    {\color{violet}}
-
-\newcommand {\kmax}      {\mbox{$k_{\rm max}$}}
-\newcommand {\piplusenu} {\mbox{$\pi^+ \to e^+ \nu$}}
-
-\newcommand {\mumemconv}[1][A] {\mbox{$\mu^- \textrm{#1} \rightarrow e^- \textrm{#1}$}}
-% Define a relay to have 2 default arguments instead of limit of 1
-\newcommand {\mumepconv}[1][A] {%
-  \def\ArgI{{#1}}%store the first argument
-  \mumepconvRelay
-}
-\newcommand \mumepconvRelay[1][A]  {\mbox{$\mu^- \textrm{\ArgI} \rightarrow e^+ \textrm{#1}$}}
-\newcommand {\MuToEm}     {\mbox{$\mu^- \ra e^-$}}
-\newcommand {\MuToEp}     {\mbox{$\mu^- \ra e^+$}}
-\newcommand {\MuPToEp}    {\mbox{$\mu^+ \ra e^+$}}
-\newcommand {\ra}        {\rightarrow}
-\newcommand {\Rmue}       {\mbox{$R_{\mu e}$}}
-\newcommand {\tandip}    {\mbox{$\tan \lambda$}}
-
-\newcommand {\Pb}[1]     {\mbox{$\rm ^{#1}Pb$}}                 % isotopes of lead
-\newcommand {\Au}[1]     {\mbox{$\rm ^{#1}Au$}}                 % isotopes of gold
-\newcommand {\Ir}[1]     {\mbox{$\rm ^{#1}Ir$}}                 % isotopes of iridium
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% editing commands
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand {\del}[1]    {{\blue   \sout{#1}}}
-\newcommand {\dlt}[1]    {{\violet \sout{#1}}} %alternate delete color
-\newcommand {\add}[1]    {{\red #1}}
-\newcommand {\alt}[1]    {{\green #1}} %alternate comment color
-\newcommand {\hlite}[1]  {{\red      \ul{#1}}}   % needs xcolor, soul
+\include{local_commands}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % for editors
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,22 +105,21 @@
     be performed at $B \simeq 0.7$ T, so the determined momentum scale would need to be
     extrapolated to the nominal field value, B = 1 T.
     
-    With small modifications, the pion degrader could become an instrument
-    also allowing to calibrate the Mu2e momentum scale in full field.
-    The calibration at full field is based on reconstruction of a 129.4 MeV photon
-    peak from RPC on hydrogen, $\pi^- p \to n \gamma$.
+    With small modifications, the pion degrader could also allow to calibrate
+    the Mu2e momentum scale in full field. The scale Calibration at full field
+    is based on reconstruction of a 129.4 MeV photon peak from RPC on hydrogen,
+    $\pi^- p \to n \gamma$.
 %
     The converted photon energy is given by the $e^+e^-$ invariant mass,
-    This note demonstrates that due to relatively small multiple scattering,
+    Due to relatively small multiple scattering, 
     the sum of the electron an positron momenta gives a good approximation
-    of the $e^+e^-$ invariant mass. Thus reconstruction of the energy of a photon
-    converted several meters in upstream of the tracker only needs the $e^+$ and $e^-$
+    of the $e^+e^-$ invariant mass. Therefor, the reconstruction of the energy of a photon
+    converted several meters upstream of the tracker only requires the $e^+$ and $e^-$
     track momenta to be reconstructed, but doesn't require the track extrapolation
     back to the degrader.
 
-    Under realistic assumptions, the time needed to calibrate the momentum scale
-    to the accuracy better then 100 keV while running at 10\% of the nominal proton beam
-    intensity is about one day.
+    The time needed to calibrate the momentum scale to the accuracy better then 100 keV
+    while running at 10\% of the nominal proton beam intensity is about one day.
 
   \end{abstract}
 
@@ -228,7 +193,7 @@ without reducing the DS magnetic field.
 \include{rpc_on_hydrogen}
 \include{geometry_optimization}
 \include{reconstructed_spectrum}
-\include{track_reconstruction_status}
+\include{track_reconstruction}
 \include{geometry_v4}
 % \include{ce_acceptance} % included into geometry_v4
 
