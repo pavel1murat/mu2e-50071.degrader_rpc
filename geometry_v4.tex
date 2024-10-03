@@ -2,13 +2,13 @@
 \section{Option 2: converter inside the OPA}
 \label{section:geometry_v4}
 If the converter radius is large enough, the converter ring surrounding the pion degrader
-could be limiting the degrader arm movement. 
-An attractive option of positioning the converter is to have the converter placed 
-at the upstream end of the OPA. In this case, a gold converter foil could be put
-on a thin ring made of fiber foam and supported by the OPA, similar to the stopping target.
-That would allow to make a converter ring wider and increase the yield of $\gamma \to e^+e^-$
-events and simplify geometry of the moving part of the degrader positioned inside
-a narrow gap in between the TS and OPA.
+could start limiting the degrader arm movement. 
+Therefore, becomes attractive to consider positioning the converter inside the OPA,
+and have is supported by the OPA. In this case, a gold converter foil could be put
+on a thin carbon foam ring supported by the OPA, similar to the stopping target.
+That might allow to increase the width of the converter ring, increasing the yield
+of $\gamma \to e^+e^-$ events respectively. That would also simplify the geometry
+of the moving part of the degrader inside the narrow gap in between the TS and the OPA.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -23,41 +23,57 @@ a narrow gap in between the TS and OPA.
   \end{tikzpicture}
   \caption{
     \label{figure:degrader_v4}
-    degrader v4: converter ring supported by OPA
+    degrader v4: converter ring supported by OPA. The carbon foam ring is not shown.
   }
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \subsection{Parameters used in the simulation}
 
 \begin{itemize}
 \item
-  pion stops: reuse pipenu:bpim01b0, for the next iteration resimulate properly
+  pion stops: reuse pipenu:bpim01b0s24r000, {\red for the next iteration re-simulate the beam properly}
 \item
-  converter thickness - 100$\mu$, width - 2 cm, $R_{out} = 250$ mm
+  converter foil:  thickness = 100$\mu$, width = 2 cm, $R_{out} = 250$ mm
+\item
+  carbon foam is not included into the simulation. The approximation is justified
+  by the fact that 1cm thick layer of carbon foam, in units of radiation length,
+  adds much less material than a 100 um thick gold foil.
 \item 
-  for simulating RPC photons: degrader material: CH2 , 24mm thick,
-  to approximately match the material of 4mm thick Ti converter.
-  May need to re-optimize the thickness to match the pion stopping rate
-  at the ST to that of 4mm Ti
+  simulation of RPC photons:
+  \begin{itemize}
+  \item 
+    degrader material: CH2 , 24mm thick,
+    to approximately match the material of 4mm-thick Ti converter.
+  \item 
+    \red{need to re-optimize the thickness to match the pion stopping rate
+    at the ST to that of 4mm Ti}
+  \end{itemize}
 \item
-  10M events $\gamma$ events, 
+  generated statistics: 10M single $\gamma$ events, $E_\gamma = 129.4$ MeV, 
 \item
   simulated range of cos(theta): [0,0.45] 
 \item
-  dataset family: rpc07b0
+  dataset family: pipenu:rpc07b0
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Resolution in the photon energy}
+\newpage
+\subsection{Resolution in the reconstructed photon energy}
 
-The distribution of $E_\gamma = P(e^+) + P(e^-)$ for the events with the reconstructed
-$e^+$ and $e^-$ tracks is shown in Figure~\ref{figure:t2_0_smom_1}.
-Overlaid is the fit of the distribution with the SU2020 function \cite{MU2E_SU2020_PAPER}.
+The distribution of $E_\gamma = P(e^+) + P(e^-)$ for the events
+with the reconstructed $e^+$ and $e^-$ tracks is shown in Figure~\ref{figure:t2_0_smom_1}.
+Overlaid is the fit of the distribution with the SU2020 resolution function
+defined by Eq.~\ref{eq:dio_mom_res}.
 The $\chi^2/DOF$ of the fit is close to one, and with about 1000 events in the peak,
-an uncertainty on the peak position returned by the fitter is below 10 keV/c.
+the uncertainty on the peak position returned by the fitter is below 10 keV/c.
 This is a good indication that statistics of 1000 events should be sufficient
-to achieve the momentum scale calibration accuracy of 100 keV/c.
+for calibrating the momentum scale with the accuracy better than 100 keV/c.
+
+Although the track topology in $\gamma \to e^+e^-$ events is different from
+$\sim$ 100 MeV/c CE tracks, together with the reconstructed \piplusenu\ peak,
+this calibration should yield a conclusive determination of the Mu2e momentum scale.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -80,23 +96,30 @@ to achieve the momentum scale calibration accuracy of 100 keV/c.
 \newpage
 \subsection{Converter impact on the CE acceptance}
 
-Figure~\ref{figure:ce_momentum_tsda} compares acceptances for the reconstructed CE tracks
-got default geometry and geometry w/o the converter.
+To estimate impact of the converter foil positioned permanently in the DS  
+volume on the CE acceptance, two single particle datasets,
+with and without the converter, have been generated
+
 \begin{itemize}
-\item 
-  CE on Al for this comparison have been generated with the radiative corrections
-  taken into account in the LL approximation.
-\item 
-  A model of perfect detector has been used - no misalignments, no miscalibrations.
 \item
-  2.5M events simulated per configuration.
+  dataset families: pipenu:cele0b0 (default geometry) and pipenu:cele3b0 (converter added)
+\item 
+  CE simulation: Al. LL rad corrections
+\item
+  2.5M events per configuration.
+\item 
+  perfect detector model - no mis-calibrations, no misalignment
 \end{itemize}
 
-Plotted in Figure~\ref{figure:ce_acceptance} are the momentum distributions for all
-reconstructed CE tracks, w/o any selections applied. 
+Figure~\ref{figure:ce_momentum_tsda} compares the acceptances
+for the two simulated configurations.
+%
+Plotted are the momentum distributions for all reconstructed CE tracks,
+no selections applied.
 
-Comparison of the distributions tells that for the momentum window of [103,105] MeV/c,
-an introduction of the Au converter reduces the CE acceptance by 0.16\%.
+For the momentum window of [103,105] MeV/c, an introduction of a
+100 um thick and 2cm wide Au converter at R = 250 mm reduces
+the CE acceptance by 0.16\%.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -116,7 +139,6 @@ an introduction of the Au converter reduces the CE acceptance by 0.16\%.
     % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
   \end{tikzpicture}
   \caption{
-    \label{figure:ce_acceptance}
     CE momentum distribution for two geometries, with and without the converter ring. 
   }
   \label{figure:ce_momentum_tsda}

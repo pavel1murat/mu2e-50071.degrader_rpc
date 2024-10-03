@@ -101,25 +101,27 @@
     \vspace{0.2in}
     
     The pion degrader reduces the background from muon decays in flight to facilitate
-    the momentum scale calibration with \piplusenu\ decays. That calibration needs to
+    the momentum scale calibration with \piplusenu\ decays. The calibration needs to
     be performed at $B \simeq 0.7$ T, so the determined momentum scale would need to be
-    extrapolated to the nominal field value, B = 1 T.
+    extrapolated to the nominal field value, B = 1.0 T.
     
-    With small modifications, the pion degrader could also allow to calibrate
-    the Mu2e momentum scale in full field. The scale Calibration at full field
-    is based on reconstruction of a 129.4 MeV photon peak from RPC on hydrogen,
-    $\pi^- p \to n \gamma$.
+    With small modifications, the degrader could also become a tool for
+    calibrating the Mu2e momentum scale at full field, B = 1.0 T.
+    The calibration at full field is based on a reconstruction of a 129.4 MeV
+    photon peak from RPC on hydrogen, $\pi^- p \to n \gamma$. Photons converted
+    on in thin converter foil are reconstructed in the $\gamma \to e^+e^-$ channel.
 %
-    The converted photon energy is given by the $e^+e^-$ invariant mass,
-    Due to relatively small multiple scattering, 
-    the sum of the electron an positron momenta gives a good approximation
-    of the $e^+e^-$ invariant mass. Therefor, the reconstruction of the energy of a photon
-    converted several meters upstream of the tracker only requires the $e^+$ and $e^-$
-    track momenta to be reconstructed, but doesn't require the track extrapolation
-    back to the degrader.
+    Due to relatively small multiple scattering, a scalar sum of the reconstructed
+    momenta of \eplus\ and \eminus\ tracks gives a good approximation of the converted
+    photon energy.
+    %
+    Therefore, the reconstruction of the energy of a photon converted several meters
+    upstream of the tracker doesn't require the track extrapolation back to the
+    conversion point.
 
-    The time needed to calibrate the momentum scale to the accuracy better then 100 keV
-    while running at 10\% of the nominal proton beam intensity is about one day.
+    The estimated time needed to calibrate the momentum scale to the accuracy better
+    then 100 keV while running at 10\% of the nominal proton beam intensity
+    is about one day.
 
   \end{abstract}
 
@@ -153,11 +155,7 @@ TODO items:
 
 \begin{itemize}
 \item
-  check references
-\item
   check section names
-\item
-  add scripted fits with printed fit errors with enough digits 
 \item
   describe datasets
 \end{itemize}
@@ -169,9 +167,9 @@ Negative pions stopped in hydrogen get captured by the hydrogen atoms,
 with the following interactions proceeding via two main channels:
 $\pi^- p \to n\pi^0$ and $\pi^- p \to n \gamma$.
 
-The second channel has a branching ratio close to 40\% and as both initial state particles
-are at rest, the outgoing photons are monochromatic
-with the energy E=129.4 MeV~\cite{RPC_1972_Bistirlich_PhysRevC.5.1867}.
+The $\pi^- p \to n \gamma$ channel has the branching ratio close to 40\%
+and as in case of a stopped $\pi^-$ both initial state particles are at rest,
+the outgoing photons are monochromatic with the energy E=129.4 MeV~\cite{RPC_1972_Bistirlich_PhysRevC.5.1867}.
 
 The 129.4 MeV peak from $\pi^- p \to n \gamma$ is also clearly visible on hydrogen-containing
 compounds, for example, polyethylene \cite{RPC_1972_Bistirlich_PhysRevC.5.1867}.
@@ -179,42 +177,26 @@ compounds, for example, polyethylene \cite{RPC_1972_Bistirlich_PhysRevC.5.1867}.
 Using such a compound as a material for the Mu2e pion degrader disk may allow to calibrate
 the Mu2e momentum scale at B = 1 T.
 
-The scale calibration requires one additional element - a this converter ring located next
-to the degrader at a sufficiently large radius, of the order of R $\sim$ 25 cm.
-Photons converted there would produce a $e^+e^-$ pair, with both an electron and
-a positron producing sufficient number of the tracker hits for both tracks
-to be reconstructed. The converted photon energy can be then determined as the sum
-of the two reconstructed track momenta, $E = P_{e^-} + P_{e^+}$ 
-All momentum scale calibration approaches discussed so far assume that the magnetic field
-in the detector solenoid is reduced \cite{MU2E_48630_PIPLUSENU}.
+The scale calibration requires one additional element - a thin converter ring
+of a sufficiently large radius and located next to the degrader in Z.
+If the radius of the conversion point is large enough, i.e. of the order of 25-30 cm,
+both \eplus\ and \eminus\ from a photon conversion could produce sufficient
+number of hits in the tracker to have their tracks reconstructed.
+The converted photon energy can be then determined as the scalar sum
+of the two reconstructed track momenta, $E = P_{e^-} + P_{e^+}$
+
+Approaches to the momentum scale calibration discussed so far rely either on the measurement
+of the edge of Michel spectrum (~52 \MeVc) or measurement of the positron peak from
+\piplusenu\ decay ($\sim$ 70 \MeVc) and therefore need to be performed with the reduced
+DS magnetic field \cite{MU2E_48630_PIPLUSENU}.
 An advantage of the calibration discussed in this note is that it can be performed
-without reducing the DS magnetic field.
+at B = 1.0 T, without reducing the DS magnetic field.
 
 \include{rpc_on_hydrogen}
-\include{geometry_optimization}
-\include{reconstructed_spectrum}
+\include{geometry_v3}
 \include{track_reconstruction}
 \include{geometry_v4}
-% \include{ce_acceptance} % included into geometry_v4
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Electric current}
-When inserted into the beam, the degrader stops the beam particles, which are
-mostly low energy, MeV-range, electrons. To avoid the accumulation of the electric charge,
-the degrader needs to be grounded. An estimate of the electric current can be obtained
-as follows:
-\begin{itemize}
-\item
-  assume that degrader stops all beam flash particles
-\item
-  from SU2020: the rate of the beam flash particles, assume all are electrons, is $\sim ~ 10^2$ of that of muons
-\item
-  muons : $1.6 \cdot 10^{-3} \times 3.9 \cdot 10^7$ , say, $7 \cdot 10^4$, which gives $\sim ~ 7 \cdot 10^7$ electrons per 1.7 ms
-\item
-  the corresponding electric current is $I ~=~ 7 \cdot 10^{-7} \times 1.6 \cdot 10^{-19} / {1.7 \cdot 10^{-6}} \sim 7 \cdot 10^{-6}$ A,
-  or $\sim$ 10 microamperes
-\end{itemize}
-
+\include{electric_current}
 \include{calibration_time}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

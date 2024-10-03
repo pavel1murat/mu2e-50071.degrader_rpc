@@ -3,10 +3,10 @@
 \label{section:track_reconstruction}
 
 Running TrkPatRec+CalPatRec p057 track reconstruction and selecting events
-with two reconstructed tracks yields the distribution of $E_\gamma$
-shown in Figure~\ref{figure:00084_rpc04b0s54_t2_1_smom_0}
-No track selection cuts are applied. A $\gamma \to e^+e^-$ peak  is clearly seen just below
-130 MeV/c..
+with two reconstructed tracks of opposite charge yields the distribution of $E_\gamma = P(+)+P(-)$
+shown in Figure~\ref{figure:00084_rpc04b0s54_t2_1_smom_0}.
+No track selection cuts are applied.
+A $\gamma \to e^+e^-$ peak  is clearly seen just below 130 MeV/c.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -32,10 +32,10 @@ for preselected events of about 10\%, which is not very high.
 However the Mu2e track reconstruction, first of all - the pattern recognition,
 has never been tuned for low momentum tracks. An example of a $\gamma \to e^+e^-$
 event with two potentially reconstructable, but only one reconstructed track
-is shown in Figure ~\ref{figure:event_display}. In this event there are two particles,
+is shown in Figure ~\ref{figure:event_display}. In this event, there are two particles,
 an electron and a positron entering the tracker with the momenta of 83.7 and 43.5 MeV/c
 respectively. A particle with the higher momentum, a 83.7 MeV/c electron, has a reconstructed track,
-and  the positron track has not been found.  
+however the positron track has not been found.  
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -57,7 +57,17 @@ and  the positron track has not been found.
   }
 \end{figure}
 
-A second type of misreconstruction occurs when hits from both particles are combined to make an unrealistic track with larger radius than either true track. These can occur in place of reconstruction for an individual particle, or in addition to well-reconstructed tracks. Figure~\ref{figure:he_artifact_evts} shows two examples. Taking the sum of momenta for cases with one or more of these combined tracks can significantly overestimate the true total momentum, and results in high energy artifacts out beyond the original RPC photon energy. As part of track reconstruction improvements, better separation of hits between the two tracks will be needed to recover some of these events. 
+A second type of misreconstruction occurs when hits from both
+particles are combined to make an unrealistic track with larger radius
+than either true track. These can occur in place of reconstruction for
+an individual particle, or in addition to well-reconstructed
+tracks. Figure~\ref{figure:he_artifact_evts} shows two
+examples. Taking the sum of momenta for cases with one or more of
+these combined tracks can significantly overestimate the true total
+momentum, and results in high energy artifacts out beyond the original
+RPC photon energy. As part of track reconstruction improvements,
+better separation of hits between the two tracks will be needed to
+recover some of these events.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -80,8 +90,9 @@ A second type of misreconstruction occurs when hits from both particles are comb
 
 Figure~\ref{figure:00085_t2_1_smom_1_fit} shows the fit of the
 reconstructed $\pi^- p \to n \gamma$ peak with the SU2020 resolution function.
-The peak has its maximum at 128.4 MeV, about 200 keV below the fit to the MC truth,
-and its width is about 1 MeV FWHM. 
+The peak has its maximum at 128.4 MeV, about 200 keV below the fit
+of the MC truth distribution in Figure~\ref{figure:00083},
+and the peak width is about 1 MeV FWHM. 
 
 \begin{figure}[H]
   \begin{tikzpicture}

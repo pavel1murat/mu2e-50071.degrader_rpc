@@ -15,7 +15,7 @@ cd mu2e-50071.degrader_rpc
 make note
 okular tpm/mu2e-50071.pdf &
 #+end_src
-* figures in the note                                                         
+* figures in the note                                                        
 - all figures made by scripts, see : file:scripts/plot.C 
 * digitized figures from Bistirlich et al (1971) : file:csv
 * degrader geometry and weight                                               
@@ -118,6 +118,12 @@ could be beneficial
 #+RESULTS:
 : pgamma =    129.407
 
+* carbon foam  :
+       density: 0.05-0.25 g/cm^3, rad length: 42.6 g/cm^2
+       X0 ~ 850 cm, so 1cm is about 1 10^-3 X0
+
+       for comparison, 100 um of Au is ~3e^-2 X0
+       
 * [0/4] TODO                                                                 
 ** TODO add sum_momentum plot with the bin of 0.1 MeV/c - need larger stat
 ** TODO fix colors and legends on the time/momentum plots Fig 4
