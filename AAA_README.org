@@ -118,7 +118,7 @@ could be beneficial
 #+RESULTS:
 : pgamma =    129.407
 
-* carbon foam  :
+* carbon foam  :                                                             
        density: 0.05-0.25 g/cm^3, rad length: 42.6 g/cm^2
        X0 ~ 850 cm, so 1cm is about 1 10^-3 X0
 

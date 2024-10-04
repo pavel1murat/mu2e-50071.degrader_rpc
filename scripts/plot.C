@@ -50,6 +50,7 @@ pipenu::Analysis* gPipenu;           // same
 #include "plot_figure_0083.C"           // rpc04b0 fit t2_0/smom_1 0.1mm
 #include "plot_figure_0084.C"           // rpc04b0 murat_DrpcAna/t2_0/smom_0 0.1mm - whole range
 #include "plot_figure_0085.C"           // rpc04b0 murat_DrpcAna/t2_0/smom_1 0.1mm - fit
+#include "plot_figure_0086.C"           // rpc04b0 murat_DrpcAna/drpc_2/smomvd10_1 0.1mm - fit
 //-----------------------------------------------------------------------------
 // real [machine-dependent] values of Mu2eNotesDir and Mu2eHistDir 
 // should be defined in .rootrc
@@ -111,6 +112,7 @@ plot_data_t* plot(int Figure, int Print = 0) {
   if      (Figure ==   83) pdata = plot_figure_0083(Figure,Print);  // rpc04b0 ... fit 
   if      (Figure ==   84) pdata = plot_figure_0084(Figure,Print);  // rpc04b0s54 : t2_0/smom_0 full spectrum
   if      (Figure ==   85) pdata = plot_figure_0085(Figure,Print);  // rpc04b0s54 : t2_0/smom_1 fit
+  if      (Figure ==   86) pdata = plot_figure_0086(Figure,Print);  // rpc04b0s54 : drpc_2/smomvd10_1 fit
 
   return pdata;
 }

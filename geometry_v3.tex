@@ -253,7 +253,7 @@ energy bins than two other foils.
 
 Comparison of the left and right plots in Figure~\ref{figure:sum_mom_vd13} shows the scale of energy
 losses in the IPA and in the converter ring itself - significant fraction of energy losses comes
-from the IPA..
+from the IPA.
 
 \begin{figure}[H]
   \begin{tikzpicture}
@@ -294,6 +294,36 @@ with the asymmetric resolution function introduced in the SU2020 paper \cite{MU2
 The most probable energy loss is about 800 keV/c, 
 and the resolution function has the FWHM of about 700 keV/c.
 These numbers are not very different from the corresponding numbers for conversion electrons.
+
+The distribution of $E_\gamma^{VD10}$, the sum of the MC \eplus\ and \eminus\ momenta at VD10,
+before the IPA, is shown in Figure ~\ref{figure:00086}. As the particles do not cross the
+stopping target, this distribution reflects the impact on the energy resolution
+of the converter itself.
+%
+Fluctuations of the energy losses in the 100 um gold converter result
+in the FWHM of about 400 keV/c, small compared to the contribution of the IPA.
+Interestingly, for a 100 keV/c binning, the highest energy bin is still
+the most populated bin of the distribution.
+
+\begin{figure}[H]
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0.) {
+      % \node[shift={(0 cm,0.cm)},inner sep=0,rotate={90}] at (0,0) {}
+      \makebox[\textwidth][c] {
+        \includegraphics[width=0.9\textwidth]{pdf/figure_00086}
+      }
+    };
+    % \node [text width=8cm, scale=1.0] at (14.5,0.5) {$\mu_B$, expected background mean};
+    % \node [text width=8cm, scale=1.0, rotate={90}] at (1.5,7.5) { $S_{D}$, ``discovery'' signal strength  };
+  \end{tikzpicture}
+  \caption{
+    \label{figure:00086}
+    The distribution of $E_\gamma^{VD10}$, the sum of the MC \eplus\ and \eminus\ momenta at VD10.
+    The distribution FWHM of about 400 keV/c, and the highest energy bin is the most populated
+    bin of the distribution.
+    The fit with the SU2020 resolution function is shown only as an illustration.
+  }
+\end{figure}
 
 %%% Local Variables:
 %%% mode: latex
